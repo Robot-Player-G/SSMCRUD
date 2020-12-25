@@ -1,22 +1,18 @@
 package com.system.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
- * user实体类
+ * 用户信息实体类
  */
 public class User implements Serializable {
-    private Integer user_id;
+    //用户名，密码，昵称，性别，生日
     private String username;
     private String password;
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
+    private String nickname;
+    private String sex;
+    private Date birthday;
 
     public String getUsername() {
         return username;
@@ -34,12 +30,38 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "user_id=" + user_id +
-                ", username='" + username + '\'' +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birthday=" + birthday +
                 '}';
     }
 }

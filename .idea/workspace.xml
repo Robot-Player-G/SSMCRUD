@@ -6,37 +6,115 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="695e1be4-9e84-4cfa-a0c8-46e0ee450d15" name="Default Changelist" comment="">
+    <list default="true" id="695e1be4-9e84-4cfa-a0c8-46e0ee450d15" name="Default Changelist" comment="2020/12/25 new commit!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/TaskDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/TaskList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/service/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/TaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/Code.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/CodeCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/RandomTaskId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskPublish.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userCenter.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/ico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/index_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/register_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/success_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/taskInfo_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/taskPublish_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/userCenter_actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/ClickController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/ClickController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/ClickController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/AccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/system/controller/ClickController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/system/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/system/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/system/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbcConfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/ClickController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/jdbcConfig.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="Interface" />
+        <option value="facelets" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -75,14 +153,99 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32068965" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\images\user" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\images" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\images" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\WEB-INF\pages" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
   </component>
   <component name="RunManager">
-    <configuration name="SsmSystem" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_ssm_information_management_system" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54576" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ssm" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="ssm_information_management_system:war">
           <settings>
@@ -91,7 +254,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ssm_information_management_system" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ssm_information_management_system_2" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -99,7 +262,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64112" />
+        <option name="DEBUG_PORT" value="54576" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -158,23 +321,19 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.17928903" />
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
       </list>
     </option>
+  </component>
+  <component name="SpringBeansView">
+    <option name="showFilesets" value="false" />
+    <option name="showImplicitBeans" value="false" />
+    <option name="beanDetailsProportion" value="0.3" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -189,109 +348,197 @@
       <workItem from="1594077880686" duration="17720000" />
       <workItem from="1594105713401" duration="1367000" />
       <workItem from="1594108645292" duration="4578000" />
-      <workItem from="1594129791008" duration="975000" />
+      <workItem from="1594129791008" duration="1673000" />
+      <workItem from="1594192310385" duration="7798000" />
+      <workItem from="1594201760730" duration="3788000" />
+      <workItem from="1594257396984" duration="1384000" />
+      <workItem from="1594286114285" duration="3474000" />
+      <workItem from="1594346634223" duration="3069000" />
+      <workItem from="1595817518010" duration="58000" />
+      <workItem from="1601193725468" duration="4423000" />
+      <workItem from="1601347290864" duration="1601000" />
+      <workItem from="1604840231768" duration="4684000" />
+      <workItem from="1604884135551" duration="11019000" />
+      <workItem from="1604996440330" duration="590000" />
+      <workItem from="1605073628727" duration="1149000" />
+      <workItem from="1605099247665" duration="1440000" />
+      <workItem from="1605162565482" duration="1185000" />
+      <workItem from="1605309388592" duration="3891000" />
+      <workItem from="1605344203256" duration="4536000" />
+      <workItem from="1605396035193" duration="13173000" />
+      <workItem from="1605417079738" duration="13235000" />
+      <workItem from="1605440142454" duration="8898000" />
+      <workItem from="1605495520864" duration="1508000" />
+      <workItem from="1605534990373" duration="3456000" />
+      <workItem from="1605569530945" duration="17139000" />
+      <workItem from="1605617214438" duration="5021000" />
+      <workItem from="1605663855502" duration="28212000" />
+      <workItem from="1605752490538" duration="590000" />
+      <workItem from="1606014836397" duration="433000" />
+      <workItem from="1606277610538" duration="2469000" />
+      <workItem from="1606315905520" duration="2184000" />
+      <workItem from="1606355970974" duration="12935000" />
+      <workItem from="1606400849646" duration="1894000" />
+      <workItem from="1606432772418" duration="4293000" />
+      <workItem from="1606480835506" duration="2389000" />
+      <workItem from="1606574250709" duration="3165000" />
+      <workItem from="1606614540728" duration="10656000" />
+      <workItem from="1606661323059" duration="2835000" />
+      <workItem from="1606739899409" duration="1193000" />
+      <workItem from="1607005293000" duration="4119000" />
+      <workItem from="1607046795933" duration="1281000" />
+      <workItem from="1607079825497" duration="6324000" />
+      <workItem from="1607128768829" duration="12803000" />
+      <workItem from="1607219320635" duration="2144000" />
+      <workItem from="1607258761067" duration="4936000" />
+      <workItem from="1607306301848" duration="21444000" />
+      <workItem from="1607343133001" duration="2990000" />
+      <workItem from="1607481515550" duration="4720000" />
+      <workItem from="1607492787122" duration="1246000" />
+      <workItem from="1607517178628" duration="1341000" />
+      <workItem from="1607667109121" duration="912000" />
+      <workItem from="1607821323250" duration="2311000" />
+      <workItem from="1607827984396" duration="877000" />
+      <workItem from="1607849773032" duration="4622000" />
+      <workItem from="1608610301021" duration="1740000" />
+      <workItem from="1608616621142" duration="1076000" />
+      <workItem from="1608622031938" duration="1863000" />
+      <workItem from="1608628846915" duration="4735000" />
+      <workItem from="1608645859742" duration="5597000" />
+      <workItem from="1608686974440" duration="7888000" />
+      <workItem from="1608702981162" duration="6729000" />
+      <workItem from="1608715224740" duration="5307000" />
+      <workItem from="1608728504612" duration="6391000" />
+      <workItem from="1608781595080" duration="2147000" />
+      <workItem from="1608798159296" duration="5255000" />
+      <workItem from="1608860207273" duration="3895000" />
     </task>
+    <task id="LOCAL-00001" summary="2020/07/07 new commit!">
+      <created>1594131135305</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594131135305</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2020/07/07 new commit!" />
+    <MESSAGE value="2020/12/25 new commit!" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020/12/25 new commit!" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#Notifications" timestamp="1594109042198">
+    <state x="366" y="0" width="647" height="728" key="#SsmSystem" timestamp="1605399276665">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1594109042198" />
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594106014174">
+    <state x="366" y="0" width="647" height="728" key="#SsmSystem/0.0.1366.728@0.0.1366.728" timestamp="1605399276665" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605617588707">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1594106014174" />
-    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1594115218859">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605617588707" />
+    <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1608730409769">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1594115218859" />
-    <state x="99" y="0" key="CommitChangelistDialog2" timestamp="1594130937315">
+    <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1608730409768" />
+    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606403016000">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="99" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1594130937315" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1594107615965">
+    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606403016000" />
+    <state x="108" y="0" key="CommitChangelistDialog2" timestamp="1608864005428">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594107615965" />
-    <state x="504" y="277" width="382" height="174" key="Github.CreateGistDialog" timestamp="1594081152524">
+    <state x="108" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1608864005428" />
+    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1605315894280">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="504" y="277" width="382" height="174" key="Github.CreateGistDialog/0.0.1366.728@0.0.1366.728" timestamp="1594081152524" />
-    <state width="905" height="227" key="GridCell.Tab.0.bottom" timestamp="1594130937562">
+    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605315894280" />
+    <state width="1237" height="196" key="GridCell.Tab.0.bottom" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594130937562" />
-    <state width="905" height="227" key="GridCell.Tab.0.center" timestamp="1594130937562">
+    <state width="1237" height="196" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.0.center" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594130937562" />
-    <state width="905" height="227" key="GridCell.Tab.0.left" timestamp="1594130937562">
+    <state width="1237" height="196" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.0.left" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594130937562" />
-    <state width="905" height="227" key="GridCell.Tab.0.right" timestamp="1594130937562">
+    <state width="1237" height="196" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.0.right" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594130937562" />
-    <state width="905" height="227" key="GridCell.Tab.1.bottom" timestamp="1594130937562">
+    <state width="1237" height="196" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.1.bottom" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594130937562" />
-    <state width="905" height="227" key="GridCell.Tab.1.center" timestamp="1594130937562">
+    <state width="1237" height="196" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.1.center" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1594130937562" />
-    <state width="905" height="227" key="GridCell.Tab.1.left" timestamp="1594130937562">
+    <state width="1237" height="196" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.1.left" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1594130937562" />
-    <state width="905" height="227" key="GridCell.Tab.1.right" timestamp="1594130937562">
+    <state width="1237" height="196" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.1.right" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1594130937562" />
-    <state width="905" height="227" key="GridCell.Tab.2.bottom" timestamp="1594130937563">
+    <state width="1237" height="196" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.2.bottom" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594130937563" />
-    <state width="905" height="227" key="GridCell.Tab.2.center" timestamp="1594130937563">
+    <state width="1237" height="196" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.2.center" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1594130937563" />
-    <state width="905" height="227" key="GridCell.Tab.2.left" timestamp="1594130937563">
+    <state width="1237" height="196" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.2.left" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1594130937563" />
-    <state width="905" height="227" key="GridCell.Tab.2.right" timestamp="1594130937563">
+    <state width="1237" height="196" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1237" height="196" key="GridCell.Tab.2.right" timestamp="1608864005631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1594130937563" />
-    <state width="905" height="227" key="GridCell.Tab.3.bottom" timestamp="1594130685292">
+    <state width="1237" height="196" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
+    <state width="1323" height="223" key="GridCell.Tab.3.bottom" timestamp="1607342890294">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594130685292" />
-    <state width="905" height="227" key="GridCell.Tab.3.center" timestamp="1594130685292">
+    <state width="1323" height="223" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607342890294" />
+    <state width="1323" height="223" key="GridCell.Tab.3.center" timestamp="1607342890294">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1594130685292" />
-    <state width="905" height="227" key="GridCell.Tab.3.left" timestamp="1594130685292">
+    <state width="1323" height="223" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1607342890294" />
+    <state width="1323" height="223" key="GridCell.Tab.3.left" timestamp="1607342890294">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1594130685292" />
-    <state width="905" height="227" key="GridCell.Tab.3.right" timestamp="1594130685292">
+    <state width="1323" height="223" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1607342890294" />
+    <state width="1323" height="223" key="GridCell.Tab.3.right" timestamp="1607342890294">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="905" height="227" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1594130685292" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1594107617151">
+    <state width="1323" height="223" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1607342890294" />
+    <state x="239" y="0" key="SettingsEditor" timestamp="1608694693327">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1594107617151" />
-    <state x="346" y="49" key="search.everywhere.popup" timestamp="1594078385756">
+    <state x="239" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1608694693327" />
+    <state x="354" y="36" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604843521769">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594078385756" />
+    <state x="354" y="36" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1604843521769" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1605431515335">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605431515335" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1608647529957">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608647529957" />
+    <state x="345" y="56" key="spring file set editor" timestamp="1605703184980">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="345" y="56" key="spring file set editor/0.0.1366.728@0.0.1366.728" timestamp="1605703184980" />
   </component>
 </project>

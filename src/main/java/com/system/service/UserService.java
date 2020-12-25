@@ -33,4 +33,10 @@ public interface UserService {
      * @return
      */
     public User findOneByName(String username);
+
+    /**
+     * 通过username修改个人信息
+     * @param user
+     */
+    public void modifyUserInfo(User user);
 }

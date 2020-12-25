@@ -27,6 +27,13 @@ public interface UserDao {
      * @param username
      * @return
      */
-    @Select("select *from user_tbl where username=#{username}")
+    @Select("select u.username,`password`,nickname,sex,birthday from user_tbl as u INNER JOIN userinfo_tbl as ui where u.username=#{username} AND ui.username=#{username};")
     public User findByUserName(String username);
+
+    /**
+     * 根据username修改个人信息
+     * @param user
+     */
+    @Select("update userinfo_tbl set nickname=#{nickname},sex=#{sex},birthday=#{birthday} where username=#{username}")
+    public void modifyUserInfo(User user);
 }

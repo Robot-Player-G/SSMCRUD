@@ -23,7 +23,7 @@
     <!--配置连接池-->
     <bean id="comboPooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
-        <property name="jdbcUrl" value="jdbc:mysql:///ssm_system?serverTimezone=UTC"></property>
+        <property name="jdbcUrl" value="jdbc:mysql:///ssm_system?serverTimezone=Asia/Shanghai"></property>
         <property name="user" value="root"></property>
         <property name="password" value="123456"></property>
     </bean>

@@ -26,6 +26,16 @@
     <servlet-name>dispatcherServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  <!--配置验证码-->
+  <servlet>
+    <description>验证码</description>
+    <servlet-name>randomCode</servlet-name>
+    <servlet-class>com.system.utils.Code</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>randomCode</servlet-name>
+    <url-pattern>/randomCode</url-pattern>
+  </servlet-mapping>
   <!--配置中文乱码过滤器-->
   <filter>
     <filter-name>characterEncodingFilter</filter-name>
