@@ -58,7 +58,10 @@
                    <td id="status"></td>
                </tr>
            </table>
-           <p align="center"><button type="button" class="btn btn-success" id="receive-btn">接取</button></p>
+           <p align="center">
+               <button type="button" class="btn btn-success" id="back_btn">返回</button>
+               <button type="button" class="btn btn-success" id="receive-btn">接取</button>
+           </p>
        </div>
 </body>
 </html>

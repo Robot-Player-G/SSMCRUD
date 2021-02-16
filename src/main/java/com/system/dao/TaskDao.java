@@ -15,8 +15,8 @@ public interface TaskDao {
     /**
      * 查询所有任务的task_title,publisher,task_content,publish_time,pay信息
      */
-    @Select("select t.task_id,task_title,publisher,task_content,publish_time,receiver,finish_time,pay from task_tbl as t inner join taskInfo_tbl as ti where t.task_id=ti.task_id")
-    public List<TaskList> findAllTask();
+    @Select("select t.task_id,task_title,publisher,task_content,publish_time,receiver,finish_time,pay from task_tbl as t inner join taskInfo_tbl as ti where t.task_id=ti.task_id and publisher<>#{username}")
+    public List<TaskList> findAllTask(String username);
 
     /**
      * 按task_id查询任务
@@ -43,4 +43,20 @@ public interface TaskDao {
      */
     @Select("update taskinfo_tbl set receiver=#{receiver} where task_id=#{task_id}")
     public void saveReceiver(@Param("receiver") String receiver, @Param("task_id") Integer task_id);
+    /**
+     * 根据任务接收者查询任务
+     * @param receiver
+     * @return
+     */
+    @Select("select t.task_id,task_title,publisher,task_content,publish_time,receiver,finish_time,pay from task_tbl as t inner join taskInfo_tbl as ti where t.task_id=ti.task_id and receiver=#{receiver}")
+    public List<TaskList> findTaskInfoByReceiver(String receiver);
+    /**
+     * 根据任务发布者查询任务
+     * @param publisher
+     * @return
+     */
+    @Select("select t.task_id,task_title,publisher,task_content,publish_time,receiver,finish_time,pay from task_tbl as t inner join taskInfo_tbl as ti where t.task_id = ti.task_id and publisher = #{publisher}")
+    public List<TaskList> findTaskInfoByPublisher(@Param("publisher") String publisher);
+    @Select("select t.task_id,task_title,publisher,task_content,publish_time,receiver,finish_time,pay from task_tbl as t inner join taskInfo_tbl as ti where t.task_id = ti.task_id and task_title like #{title}")
+    public List<TaskList> getTaskInfoByKeyWord(@Param("title") String keyword);
 }

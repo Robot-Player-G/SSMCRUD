@@ -27,13 +27,13 @@ public class TaskController {
         //username传值
         private String usernameFlag = null;
         /**
-         * 查询所有任务
+         * 查询所有用户不为发布者的任务
          * @return
          */
         @RequestMapping("/findAllTask")
         @ResponseBody
-        public List<TaskList> findAllTask(){
-            List<TaskList> taskList = taskService.findAllTask();
+        public List<TaskList> findAllTask(String username){
+            List<TaskList> taskList = taskService.findAllTask(username);
            return taskList;
         }
 
@@ -75,10 +75,8 @@ public class TaskController {
         @RequestMapping(value = "/gotoPublishTask")
         public ModelAndView gotoPublishTask(String username){
             ModelAndView mv = new ModelAndView();
-            System.out.println("username:"+username);
             if (username==null){
                 mv.addObject("publisher_username",usernameFlag);
-                System.out.println(usernameFlag);
                 mv.setViewName("taskPublish");
                 return mv;
             }else {
@@ -102,8 +100,6 @@ public class TaskController {
             //获取当前时间并赋值给publish_time
             Date date = new Date();
             taskList.setPublish_time(date);
-            System.out.println("----------");
-            System.out.println(taskList);
             //保存任务进数据库，task_tbl表
             taskService.saveTask(taskList);
             //保存任务信息进taskInfo_tbl表
@@ -121,7 +117,43 @@ public class TaskController {
         @ResponseBody
         public TaskList getTaskInfoById(Integer task_id){
             TaskList list = taskService.findTaskByTaskId(task_id);
-            System.out.println(list);
+            return list;
+        }
+
+        /**
+         * 根据接收者查询任务
+         * @param receiver
+         * @return
+         */
+        @RequestMapping(value = "/getTaskInfoByReceiver")
+        @ResponseBody
+        public List<TaskList> getTaskInfoByReceiver(String receiver){
+            List<TaskList> list = taskService.findTaskInfoByReceiver(receiver);
+            return list;
+        }
+
+        /**
+         * 根据发布者查询任务
+         * @param publisher
+         * @return
+         */
+        @RequestMapping(value = "getTaskInfoByPublisher")
+        @ResponseBody
+        public List<TaskList> getTaskInfoByPublisher(String publisher){
+            List<TaskList> list = taskService.findTaskInfoByPublisher(publisher);
+            return list;
+        }
+
+        /**
+         * 根据关键字查询任务
+         * @param keyword
+         * @return
+         */
+        @RequestMapping(value = "getTaskInfoByKeyWord")
+        @ResponseBody
+        public List<TaskList> getTaskInfoByKeyWord(String keyword){
+            keyword = "%"+keyword+"%";
+            List<TaskList> list = taskService.getTaskInfoByKeyWord(keyword);
             return list;
         }
 }

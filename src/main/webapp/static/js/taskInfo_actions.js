@@ -46,7 +46,8 @@ $(document).ready(function () {
                     data:{task_id:task_id,receiver:receiver},
                     success:function (data) {
                         if (data){
-                            alert("接取成功!");
+                            // alert("接取成功!");
+                            location.reload();
                         }
                     },
                     error:function(xhr){
@@ -55,5 +56,13 @@ $(document).ready(function () {
                 });
             }
         }
+    });
+    $("#back_btn").bind("click",function () {
+        $.ajax({
+            url:"/jump/backToTaskCenterFocus",
+            type:"post",
+            data:"username="+receiver,
+        });
+        window.location.href="/jump/backToTaskCenterFocus"
     });
 });

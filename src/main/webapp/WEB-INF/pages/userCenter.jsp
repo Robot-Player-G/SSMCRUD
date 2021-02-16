@@ -31,6 +31,7 @@
       <input type="hidden" id="hidden-nickname" value="${user.nickname}">
       <input type="hidden" id="hidden-sex" value="${user.sex}">
       <input type="hidden" id="hidden-birthday" value="${user.birthday}">
+      <input type="hidden" id="hidden-flag" value="${focus_flag}">
       <div class="container">
           <h3 align="center">用户中心</h3>
       </div>
@@ -51,8 +52,8 @@
                   <!-- Collect the nav links, forms, and other content for toggling -->
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                       <ul class="nav navbar-nav">
-                          <li class="active"><a href="javascript:void(0)" id="user-info">个人信息 <span class="sr-only">(current)</span></a></li>
-                          <li><a href="javascript:void(0)" id="task-info">交易记录</a></li>
+                          <li id="info-li"><a href="javascript:void(0)" id="user-info">个人信息 <span class="sr-only">(current)</span></a></li>
+                          <li id="deal-li"><a href="javascript:void(0)" id="task-info">交易记录</a></li>
                       </ul>
                   </div><!-- /.navbar-collapse -->
               </div>
@@ -66,7 +67,8 @@
                   <!--在这里可以修改个人信息-->
                   <form id="userInfoForm">
                       <div class="form-group">
-                         <label>用户名:</label>${user.username} <img src="/static/images/user/user.jpg" width="30px" height="30px" alt="用户头像">
+                         <label>用户名:</label>${user.username} <img src="/static/images/user/${user.username}.jpg" width="30px" height="30px" alt="用户头像">
+                          <input name="userImage" id="ico-file" type="file" value="上传头像"><a id="change_user_img" href="javascript:void(0)">确认修改</a>
                       </div>
                       <div class="form-group">
                           <label>昵称</label>

@@ -3,20 +3,20 @@ package com.system.controller;
 import com.system.domain.User;
 import com.system.service.UserService;
 import com.system.utils.CodeCheck;
-import com.system.utils.DateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.SimpleFormatter;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -100,6 +100,7 @@ public class UserController {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         if (username==null){
             mv.addObject("user",userFlag);
+            mv.addObject("focus_flag","userInfo");
             mv.setViewName("userCenter");
             return mv;
         }else {
@@ -108,7 +109,6 @@ public class UserController {
             date = userFlag.getBirthday();
             String timeFormat = sdf.format(date);
             userFlag.setBirthday(date);
-            System.out.println(timeFormat);
             return mv;
         }
     }
@@ -120,7 +120,6 @@ public class UserController {
     @RequestMapping(value = "/modifyUserInfo")
     public ModelAndView modifyUserInfo(User user){
         ModelAndView mv = new ModelAndView();
-        System.out.println(user);
         mv.addObject("user",user);
         mv.setViewName("userCenter");
         return mv;
@@ -142,21 +141,64 @@ public class UserController {
     }
 
     /**
+     * 历史交易记录
+     * @return
+     */
+    @RequestMapping("/historyDeal")
+    public ModelAndView historyDeal(String username){
+        ModelAndView mv = new ModelAndView();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        if (username==null){
+            mv.addObject("user",userFlag);
+            mv.addObject("focus_flag","userDeal");
+            mv.setViewName("userCenter");
+            return mv;
+        }else {
+            userFlag = userService.findOneByName(username);
+            Date date = new Date();
+            date = userFlag.getBirthday();
+            String timeFormat = sdf.format(date);
+            userFlag.setBirthday(date);
+            return mv;
+        }
+    }
+
+    /**
      * 用户退出
      */
     @RequestMapping("/userSignOut")
     public String userSignOut(){
         return "redirect:/index.jsp";
     }
-    /**
-     * 测试通道
-     */
-    @RequestMapping(value = "/Test")
-    public ModelAndView Test(){
-        ModelAndView mv =new ModelAndView();
-        String username = "123";
-        mv.addObject("user",username);
-        mv.setViewName("success");
-        return mv;
+
+    @RequestMapping(value = "/modifyUserImage", method = RequestMethod.POST)
+    @ResponseBody
+    // 这里的MultipartFile对象变量名跟表单中的file类型的input标签的name相同，所以框架会自动用MultipartFile对象来接收上传过来的文件，当然也可以使用@RequestParam("img")指定其对应的参数名称
+    public String modifyUserImage(MultipartFile userImage, HttpServletRequest request)
+            throws Exception {
+        System.out.println(userImage.getOriginalFilename());
+        // 如果没有文件上传，MultipartFile也不会为null，可以通过调用getSize()方法获取文件的大小来判断是否有上传文件
+        if (userImage.getSize() > 0) {
+            System.out.println("1");
+            // 得到项目在服务器的真实根路径，如：/home/tomcat/webapp/项目名/images
+//       String path = session.getServletContext().getRealPath("/");
+            String path=request.getSession().getServletContext().getRealPath("/static/images/user");
+            String path1 = "D:\\ProjectWorkspace\\MavenProjSpace\\ssm_information_management_system\\src\\main\\webapp\\static\\images\\user";
+            // 得到文件的原始名称，如：美女.png
+            String fileName = "123.jpg";
+            // 通过文件的原始名称，可以对上传文件类型做限制，如：只能上传jpg和png的图片文件
+            if (fileName.endsWith("jpg") || fileName.endsWith("png") || fileName.endsWith("txt")) {
+                System.out.println("2");
+                System.out.println(path+fileName);
+                File file = new File(path1, fileName);
+                System.out.println(file);
+                userImage.transferTo(file);
+                System.out.println("2.2");
+                return "success";
+            }
+            System.out.println("2.3");
+        }
+        System.out.println("3");
+        return "error";
     }
 }

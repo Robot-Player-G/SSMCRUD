@@ -22,8 +22,8 @@ public class TaskServiceImpl implements TaskService {
      * @return
      */
     @Override
-    public List<TaskList> findAllTask() {
-        return taskDao.findAllTask();
+    public List<TaskList> findAllTask(String username) {
+        return taskDao.findAllTask(username);
     }
 
     @Override
@@ -57,5 +57,35 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public void saveReceiver(Integer task_id,String receiver) {
         taskDao.saveReceiver(receiver,task_id);
+    }
+
+    /**
+     * 根据任务接受者查询任务
+     * @param receiver
+     * @return
+     */
+    @Override
+    public List<TaskList> findTaskInfoByReceiver(String receiver) {
+        return taskDao.findTaskInfoByReceiver(receiver);
+    }
+
+    /**
+     * 根据任务发布者查询任务
+     * @param publisher
+     * @return
+     */
+    @Override
+    public List<TaskList> findTaskInfoByPublisher(String publisher) {
+        return taskDao.findTaskInfoByPublisher(publisher);
+    }
+
+    /**
+     * 根据关键字模糊查询
+     * @param keyword
+     * @return
+     */
+    @Override
+    public List<TaskList> getTaskInfoByKeyWord(String keyword) {
+        return taskDao.getTaskInfoByKeyWord(keyword);
     }
 }

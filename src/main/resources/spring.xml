@@ -38,5 +38,8 @@
             </list>
         </property>
     </bean>
-    <!---->
+    <!--配置文件解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="2097152"></property>
+    </bean>
 </beans>
