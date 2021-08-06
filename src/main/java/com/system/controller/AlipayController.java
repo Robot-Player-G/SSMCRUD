@@ -340,9 +340,7 @@ public class AlipayController {
         System.out.println(username);
         Integer balance = Integer.parseInt(tradeNo.split("-")[1]);
         Long rechargeID = Long.parseLong(tradeNo.split("-")[2]);
-        System.out.println(rechargeID);
 
-        System.out.println("1");
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id, AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
 
@@ -353,13 +351,10 @@ public class AlipayController {
         //请求
         String result = alipayClient.execute(alipayRequest).getBody();
 
-        System.out.println("2");
-        System.out.println(result);
         JSONObject object = (JSONObject) JSON.parse(result);
         System.out.println(object.get("alipay_trade_query_response"));
         JSONObject msg = (JSONObject) JSON.parse(object.get("alipay_trade_query_response").toString());
 
-        System.out.println("3");
         if (msg.get("msg").equals("Success")){
             Integer SqlBalance = userService.getBalanceByUsername(username);
             Integer balance1 = balance + SqlBalance;

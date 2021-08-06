@@ -28,9 +28,8 @@
     <title>登录反馈页面</title>
 </head>
 <body>
+      <input type="hidden" value="${msg}" id="msg">
       <input type="hidden" value="${code}" id="code">
-      <input type="hidden" value="${user}" id="user">
-      <input type="hidden" value="${check}" id="check">
       <div class="container">
           <h2 align="center">Error</h2>
           <hr/>

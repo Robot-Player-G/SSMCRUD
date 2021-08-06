@@ -1,6 +1,7 @@
 package com.system.controller;
 
 import com.system.domain.*;
+import com.system.exception.LoginException;
 import com.system.service.AdminService;
 import com.system.service.UserService;
 import com.system.utils.CodeCheck;
@@ -68,7 +69,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/userLogin",method = RequestMethod.POST)
-    public ModelAndView userLogin(User user, HttpServletRequest request, HttpSession session){
+    public ModelAndView userLogin(User user, HttpServletRequest request, HttpSession session) throws LoginException {
         ModelAndView mv = new ModelAndView();
         User userInfo = userService.findOneByName(user.getUsername());
         User user1 = userService.findUserByName(user.getUsername());
@@ -76,17 +77,11 @@ public class UserController {
         String randomCode = (String)session.getAttribute("randomCode");
         System.out.println(user);
         if (user.getUsername()==""||user.getPassword()==""){
-            mv.addObject("user","0");
-            mv.setViewName("error");
-            return mv;
+            throw new LoginException("用户名或者密码不能为空！");
         }else if (userCode==""){
-            mv.addObject("code","0");
-            mv.setViewName("error");
-            return mv;
+            throw new LoginException("验证码不能为空！");
         }else if (user1==null){
-            mv.addObject("user","1");
-            mv.setViewName("error");
-            return mv;
+            throw new LoginException("用户不存在！");
         }else {
             String codeCheckResult = codeCheck.codeCheck(randomCode,userCode);
             if(user1.getUsername().equals(user.getUsername())&&
@@ -97,9 +92,7 @@ public class UserController {
                 mv.setViewName("success");
                 return mv;
             }else{
-                mv.addObject("check","0");
-                mv.setViewName("error");
-                return mv;
+                throw new LoginException("用户名或密码错误");
             }
         }
     }
