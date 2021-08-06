@@ -8,12 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="695e1be4-9e84-4cfa-a0c8-46e0ee450d15" name="Default Changelist" comment="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/ControllerExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/user/123.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/impl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -539,7 +536,7 @@
       <workItem from="1628039881604" duration="29765000" />
       <workItem from="1628126955262" duration="32488000" />
       <workItem from="1628212785217" duration="13182000" />
-      <workItem from="1628236265026" duration="3699000" />
+      <workItem from="1628236265026" duration="5328000" />
     </task>
     <task id="LOCAL-00001" summary="2020/07/07 new commit!">
       <created>1594131135305</created>
@@ -569,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628239618525</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2021/08/06 提交未成功的class字节码文件">
+      <created>1628240283948</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1628240283948</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +596,8 @@
     <MESSAGE value="2020/07/07 new commit!" />
     <MESSAGE value="2020/12/25 new commit!" />
     <MESSAGE value="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）" />
+    <MESSAGE value="2021/08/06 提交未成功的class字节码文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021/08/06 提交未成功的class字节码文件" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="25" key="#Template_Data_Languages" timestamp="1627980503910">
@@ -611,10 +616,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1628050915862" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1628239562538">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1628240247695">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1628239562538" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1628240247695" />
     <state x="463" y="96" key="FileChooserDialogImpl" timestamp="1627965366699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -695,10 +700,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="431" height="448" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1628003738429" />
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1628240145336">
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1628240334788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1628240145336" />
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1628240334788" />
     <state x="413" y="172" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1628238352221">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -707,6 +712,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="392" y="12" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1628215005722" />
+    <state x="270" y="101" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1628248940209">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="270" y="101" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1366.728@0.0.1366.728" timestamp="1628248940209" />
     <state x="303" y="95" width="759" height="538" key="find.popup" timestamp="1627998804022">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
