@@ -7,122 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="695e1be4-9e84-4cfa-a0c8-46e0ee450d15" name="Default Changelist" comment="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/myApp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ssm_information_management_system_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/user.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eth_interface/.idea/eth_interface.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/alipay/config/AlipayConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/aspect/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/AlipayController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/ControllerExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/EthFileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/AdminDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/MessageDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/DealRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/EthData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/RechargeRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/req/UserReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/resp/CommonResp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/resp/UserResp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/ToBufferedImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminError.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminHomePage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminMessage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminTaskManagement.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminUserManagement.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/dataNull.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/recharge.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.close.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.fastpay.refund.query.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.page.pay.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.query.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.refund.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/notify_url.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/return_url.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-maizi.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.new.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/b1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/b2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/b3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminError_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminHomePage_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminMessage_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminTaskManagement_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminUserManagement_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/error_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/JumpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/JumpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/TaskDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/domain/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/TaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/eth/MyEth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/eth/MyEth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/WSMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/WSMessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/TaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/utils/CodeCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/CodeCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/web/webSocket/WebSocketDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/web/webSocket/WebSocketDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/chatRoom.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/chatRoom.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/submitTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/submitTask.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskPublish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskPublish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userCenter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userCenter.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/chatRoom_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/chatRoom_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/index_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/index_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/register_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/register_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/submitTask_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/submitTask_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/success_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/success_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/taskInfo_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/taskInfo_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/taskPublish_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/taskPublish_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/userCenter_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/userCenter_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/web3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/web3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/system/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/system/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/system/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbcConfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/domain/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/jdbcConfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/lib/aspectjweaver-1.6.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +88,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="git@github.com:Robot-Player-G/SSMCRUD.git" />
+      </set>
+    </option>
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -641,7 +539,7 @@
       <workItem from="1628039881604" duration="29765000" />
       <workItem from="1628126955262" duration="32488000" />
       <workItem from="1628212785217" duration="13182000" />
-      <workItem from="1628236265026" duration="3048000" />
+      <workItem from="1628236265026" duration="3699000" />
     </task>
     <task id="LOCAL-00001" summary="2020/07/07 new commit!">
       <created>1594131135305</created>
@@ -664,13 +562,33 @@
       <option name="project" value="LOCAL" />
       <updated>1613490538100</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）">
+      <created>1628239618525</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1628239618525</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="2020/07/07 new commit!" />
     <MESSAGE value="2020/12/25 new commit!" />
     <MESSAGE value="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）" />
@@ -693,10 +611,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1628050915862" />
-    <state x="100" y="0" key="CommitChangelistDialog2" timestamp="1628239372431">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1628239562538">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="100" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1628239372431" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1628239562538" />
     <state x="463" y="96" key="FileChooserDialogImpl" timestamp="1627965366699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -777,6 +695,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="431" height="448" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1628003738429" />
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1628240145336">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1628240145336" />
     <state x="413" y="172" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1628238352221">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
