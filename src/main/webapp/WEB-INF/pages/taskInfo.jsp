@@ -22,6 +22,8 @@
     <script src="${path}/static/js/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="${path}/static/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<%--    <link rel="stylesheet" href="${path}/static/css/bootstrap.min.new.css"/>--%>
+    <link rel="stylesheet" href="${path}/static/css/bootstrap-maizi.css"/>
     <link rel="shortcut icon" href="/static/images/ico.png">
     <script type="application/javascript" src="${path}/static/js/taskInfo_actions.js?ver=1"></script>
 </head>
@@ -30,9 +32,10 @@
        <input type="hidden" id="user" value="${username}">
        <div class="container">
            <h3 align="center">任务详情</h3>
+           <hr/>
        </div>
        <div class="container">
-           <table align="center">
+           <table align="center" class="table table-striped">
                <tr>
                    <td>任务标题:</td>
                    <td id="title"></td>
@@ -59,7 +62,7 @@
                </tr>
            </table>
            <p align="center">
-               <button type="button" class="btn btn-success" id="back_btn">返回</button>
+               <button type="button" class="btn btn-default dropdown-toggle" id="back_btn">返回</button>
                <button type="button" class="btn btn-success" id="receive-btn">接取</button>
            </p>
        </div>

@@ -3,13 +3,15 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-    http://www.springframework.org/schema/beans
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd">
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop
+    https://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 只扫描controller的注解，别的不扫描 -->
     <context:component-scan base-package="com.system">
@@ -26,6 +28,7 @@
     <mvc:resources location="/static/css/" mapping="/static/css/**" />
     <mvc:resources location="/static/images/" mapping="/static/images/**" />
     <mvc:resources location="/static/js/" mapping="/static/js/**" />
+    <mvc:resources location="/static/fonts/" mapping="/static/fonts/**" />
 
     <!--开启SpringMVC注解的支持-->
     <mvc:annotation-driven conversion-service="conversionService"/>
@@ -42,4 +45,7 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="2097152"></property>
     </bean>
+
+    <!--配置spring开启注解AOP的支持-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>

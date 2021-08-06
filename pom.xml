@@ -173,11 +173,47 @@
       <version>8.5.23</version>
     </dependency>
 
-  <!--添加web3j-->
+    <!--添加web3j-->
     <dependency>
       <groupId>org.web3j</groupId>
       <artifactId>core</artifactId>
       <version>3.3.1</version>
+    </dependency>
+    <!--引入需要使用JSONObject的依赖-->
+    <dependency>
+      <groupId>net.sf.json-lib</groupId>
+      <artifactId>json-lib</artifactId>
+      <version>2.4</version>
+      <classifier>jdk15</classifier>
+    </dependency>
+    <!-- 引入pageHelper分页插件 -->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>5.1.2</version>
+    </dependency>
+    <!--alipay支付宝 sdk-->
+    <!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
+    <dependency>
+      <groupId>com.alipay.sdk</groupId>
+      <artifactId>alipay-sdk-java</artifactId>
+      <version>4.16.2.ALL</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.zxing</groupId>
+      <artifactId>core</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.zxing</groupId>
+      <artifactId>javase</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+    <!--配置可以解析切入点表达式的依赖-->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.9.6</version>
     </dependency>
   </dependencies>
 

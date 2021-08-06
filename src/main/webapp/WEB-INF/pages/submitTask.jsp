@@ -20,17 +20,30 @@
     <script src="${path}/static/js/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="${path}/static/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<%--    <link rel="stylesheet" href="${path}/static/css/bootstrap.min.new.css"/>--%>
+    <link rel="stylesheet" href="${path}/static/css/bootstrap-maizi.css"/>
     <link rel="shortcut icon" href="${path}/static/images/ico.png">
     <script type="text/javascript" src="${path}/static/js/submitTask_actions.js"></script>
-    <script type="text/javascript" src="${path}/static/js/web3.min.js"></script>
-    <script type="text/javascript" src="${path}/static/js/web3.js"></script>
-
     <title>提交方案</title>
 </head>
 <body>
     <input type="hidden" id="taskId" value="${taskId}">
     <div class="container">
-        <div class="btn-default" id="submit">提交任务</div>
+        <h2 align="center">方案提交</h2>
+        <hr/>
+    </div>
+    <div class="container">
+        <div class="container">
+            <b>请上传你的方案:</b><br/>
+            <input type="file" class="btn-default" id="file"><br/>
+            <input type="button" class="btn-default" id="submit" value="提交方案">
+        </div>
+        <div class="container">
+            <p id="show-label"></p>
+        </div>
+        <div class="container" id="success-show">
+
+        </div>
     </div>
 </body>
 </html>

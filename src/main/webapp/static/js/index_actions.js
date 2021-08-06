@@ -12,6 +12,15 @@ $(document).ready(function () {
          console.log(variable);
          alert(variable);
      });
+     $("input[type=radio][name=flag]").bind("change",function () {
+         if (this.value == "admin"){
+             $("#method-flag").val("PUT");
+             console.log($("#method-flag").val());
+         }else {
+             $("#method-flag").val("POST");
+             console.log($("#method-flag").val());
+         }
+     });
 });
 $.extend({
     getQueryVariable:function (variable) {

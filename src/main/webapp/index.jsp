@@ -5,7 +5,7 @@
   Time: 20:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% pageContext.setAttribute("path", request.getContextPath()); %>
 <html>
@@ -27,56 +27,68 @@
     <link REL="SHORTCUT ICON" href="/static/images/ico.png">
 </head>
 <body>
-<%--    <div>--%>
-<%--        <form method="post"action="/user/userLogin">--%>
-<%--            用户:<input type="text" name="username"><br/>--%>
-<%--            密码:<input type="password" name="password"><br/>--%>
-<%--            验证码:<input type="text" name="userCode"><img alt="code" id="randomCode" src="randomCode">--%>
-<%--            <b id="flush_code">看不清，换一个</b><br/>--%>
-<%--            <input type="submit" value="登录"><br/>--%>
-<%--        </form>--%>
-<%--    </div>--%>
-    <p class="container">
-        <h3><p class="text-center">欢迎来到idea世界，请先登录!</p></h3>
+    <div class="container">
+        <h3><p class="text-center">欢迎来到idea世界!</p></h3>
         <p class="text-center"><span class="label label-primary">welcome！</span></p>
     </div>
-    <div class="container">
-        <form class="form-horizontal" method="post" action="/user/userLogin">
-            <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">用户:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="请输入用户名" name="username">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">密码:</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码" name="password">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">验证码:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputUsercode" placeholder="请输入验证码，区分大小写" name="userCode">
-                    <img alt="code" id="randomCode" src="${path}/randomCode">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> 记住用户
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">登录</button>&nbsp;&nbsp;&nbsp;
-                    还没有账户?<a class="btn btn-default" href="/user/toUserRegister" role="button">注册</a>
-                </div>
-            </div>
-        </form>
+    <div class="jumbotron" style="width:80%;margin: auto" align="center">
+        <div class="container">
+            <h1>Hello, world!</h1>
+            <p>欢迎来到本网站！</p>
+            <p>欢迎使用！</p>
+            <a data-toggle="modal" data-target="#loginModal" class="btn-default">登录</a>
+             &nbsp;&nbsp;&nbsp;&nbsp; 还没有账号?<a href="/jump/toUserRegister" class="btn-default">注册</a>
+        </div>
     </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><input type="radio" checked="checked" name="flag" value="user">用户&nbsp;&nbsp;&nbsp;<input type="radio" name="flag" value="admin">管理员</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" action="${path}/user/userLogin" method="post">
+                        <div class="form-group">
+                            <input type="hidden" id="method-flag" name="_method" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="addname">用户</label>
+                            <input type="text" id="addname" name="username" class="form-control" placeholder="请输入用户名">
+                        </div>
+                        <div class="form-group">
+                            <label for="addpassword">密码</label>
+                            <input type="text" id="addpassword" name="password" class="form-control" placeholder="请输入密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="rCode">验证码</label>
+                            <input type="text" id="rCode" name="userCode" class="form-control" placeholder="请输入验证码，区分大小写">
+                            <img alt="code" id="randomCode" src="${path}/randomCode">
+                        </div>
+                        <div class="form-group" style="child-align: middle;">
+                            <p align="right"><input type="submit" style="width: 100px;" class="form-control" value="登录"></p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p align="center">
+                        Copyright&nbsp;©&nbsp;2021-2025&nbsp;&nbsp;www.maiziedu.com&nbsp;&nbsp;蜀ICP备13014270号-4
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer-->
 </body>
 </html>

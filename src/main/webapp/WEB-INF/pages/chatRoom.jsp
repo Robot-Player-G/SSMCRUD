@@ -30,17 +30,29 @@
      <input type="hidden" id="userA" value="${userA}">
      <input type="hidden" id="userB" value="${userB}">
      <input type="hidden" id="flag">
-     <div class="container" id="tou">
-         webSocket多终端聊天测试
+     <input type="hidden" id="m-flag">
+     <div class="container">
+         <div class="container">
+             <h3 align="center">欢迎来到聊天室！</h3>
+         </div>
+         <div class="container" style="width: 30%;height:80px;float: left;">
+             <div class="container" id="tou">
+             </div>
+             <div class="container" id="user-status">
+             </div>
+         </div>
      </div>
-     <div class="page-header" id="user-status"></div>
-     <div class="well my-style" id="msg"></div>
-     <div class="col-lg">
-         <div class="input-group">
-             <input type="text" class="form-control" placeholder="发送信息..." id="message">
-             <span class="input-group-btn">
+    <div class="container">
+        <div class="well my-style" id="msg" style="width: 100%;overflow-y: auto;overflow-x: auto"></div>
+    </div>
+     <div class="container">
+         <div class="col-lg">
+             <div class="input-group">
+                 <input type="text" class="form-control" placeholder="发送信息..." id="message">
+                 <span class="input-group-btn">
            <button class="btn btn-default" type="button" id="send" >发送</button>
         </span>
+             </div>
          </div>
      </div>
 </body>

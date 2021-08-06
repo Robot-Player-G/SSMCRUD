@@ -22,27 +22,35 @@
     <script src="${path}/static/js/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="${path}/static/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<%--    <link rel="stylesheet" href="${path}/static/css/bootstrap.min.new.css"/>--%>
+    <link rel="stylesheet" href="${path}/static/css/bootstrap-maizi.css"/>
     <script type="text/javascript" src="/static/js/jquery.min.js"></script>
     <script type="text/javascript" src="/static/js/taskPublish_actions.js?ver=1"></script>
     <link rel="shortcut icon" href="/static/images/ico.png">
 </head>
 <body>
       <input id="publisher" type="hidden" value="${publisher_username}">
+      <input id="pay-hash" type="hidden" value="">
+      <input id="pay-flag" type="hidden" value="">
+      <div class="container">
+          <h2 align="center">发布任务页面</h2>
+          <hr/>
+      </div>
       <div class="container">
           <p id="show_publisher" align="center"></p>
       </div>
       <div class="container" align="center">
-          <form method="post" action="/task/publishTask">
-              任务标题 :&nbsp<input type="text" name="task_title"><br/><br/>
+          <form method="post" action="/task/publishTask" id="task-form">
+              任务标题 :&nbsp<input type="text" name="task_title" id="title"><br/><br/>
               <input type="hidden" name="publisher" value="${publisher_username}">
-              任务内容 ::&nbsp<input type="text" name="task_content"><br/><br/>
+              任务内容 :&nbsp<input type="text" name="task_content"><br/><br/>
               <input type="hidden" name="publish_time" id="publish_time">
               <input type="hidden" name="receiver" id="receiver">
               <input type="hidden" name="finish_time" id="finish_time">
-              任务报酬 ::&nbsp<input type="text" name="pay"><br/><br/>
+              任务报酬 :&nbsp<input type="text" name="pay" id="pay"><br/><br/>
               <p align="center">
-                  <button type="button" class="btn btn-success" id="back_btn">返回</button>
-                  <input type="submit"  class="btn btn-success" value="发布任务">
+                  <button type="button" class="btn btn-default dropdown-toggle" id="back_btn">返回</button>
+                  <input type="button"  class="btn btn-default dropdown-toggle" value="发布任务" id="publish-btn">
               </p>
           </form>
       </div>

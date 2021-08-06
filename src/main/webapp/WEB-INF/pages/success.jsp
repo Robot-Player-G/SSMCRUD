@@ -23,14 +23,17 @@
     <script src="${path}/static/js/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="${path}/static/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<%--    <link rel="stylesheet" href="${path}/static/css/bootstrap.min.new.css"/>--%>
+    <link rel="stylesheet" href="${path}/static/css/bootstrap-maizi.css"/>
     <link rel="shortcut icon" href="/static/images/ico.png">
     <script type="application/javascript" src="${path}/static/js/success_actions.js?ver=1"></script>
 </head>
-<body>
-      <input type="hidden" value="${user}" id="user-input">
+<body >
+      <input type="hidden" value="${user.username}" id="user-input">
       <input type="hidden" value="${username}" id="publisher-input">
-      <input type="hidden" value="${publish}" id="isSuccess-input">
+      <input type="hidden" value="${p_flag}" id="isSuccess-input">
       <input type="hidden" value="${backFlag}" id="back-flag">
+      <input type="hidden" value="${rechargeFlag}" id="recharge-flag">
       <div class="container">
           <h3 align="center">欢迎来到idea交易世界!</h3>
       </div>
@@ -53,15 +56,16 @@
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                       <ul class="nav navbar-nav">
                           <li id="task-center-li"><a href="javascript:void(0);" id="task_center">创意方案交易中心<span class="sr-only">(current)</span></a></li>
-                          <li><a href="javascript:void(0);" id="list">创意方案交易共享案例</a></li>
-                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="${path}/jump/jumpToUserManual">新手教程</a></li>
-                                  <li role="separator" class="divider"></li>
-                                  <li><a href="${path}/jump/jumpToSiteDescription">网站介绍</a></li>
-                              </ul>
-                          </li>
+<%--                          <li><a href="javascript:void(0);" id="list">创意方案交易共享案例</a></li>--%>
+<%--                          <li class="dropdown">--%>
+<%--                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>--%>
+<%--                              <ul class="dropdown-menu">--%>
+<%--                                  <li><a href="${path}/jump/jumpToUserManual">新手教程</a></li>--%>
+<%--                                  <li role="separator" class="divider"></li>--%>
+<%--                                  <li><a href="${path}/jump/jumpToSiteDescription">网站介绍</a></li>--%>
+<%--                              </ul>--%>
+<%--                          </li>--%>
+                          <li><a data-toggle="modal" data-target="#rechargeModal">充值</a></li>
                       </ul>
                       <form class="navbar-form navbar-left">
                           <div class="form-group" id="search-div">
@@ -69,15 +73,17 @@
                           </div>
                           <button id="search-button" type="button" class="btn btn-default">搜索</button>
                       </form>
-                      <ul class="nav navbar-nav navbar-right">
+                      <ul class="nav navbar-nav navbar-right" >
                           <li class="dropdown">
-                              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="${path}/static/images/user/123.jpg" alt="头像" width="20px" height="20px"><span class="caret"></span></a>
+                              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span><span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                  <li><a href="javascript:void(0)" id="user_center" >用户${user}</a></li>
+                                  <li><a href="javascript:void(0)">用户${user.username}</br>余额为:${user.balance}</a></li>
                                   <li role="separator" class="divider"></li>
                                   <li><a href="javascript:void(0)" id="user_information">个人信息</a></li>
                                   <li role="separator" class="divider"></li>
                                   <li><a href="javascript:void(0)" id="history_deal">历史交易</a></li>
+                                  <li role="separator" class="divider"></li>
+                                  <li><a href="javascript:void(0)" id="my-leaveMessage">我的留言&nbsp<span class="badge" id="new"></span></a></li>
                                   <li role="separator" class="divider"></li>
                                   <li><a href="javascript:void(0)" id="sign-out">退出登录</a></li>
                               </ul>
@@ -97,6 +103,35 @@
               </div>
           </div>
       </div>
+      <div class="modal fade" id="rechargeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">充值页面</h4>
+                  </div>
+                  <div class="modal-body">
+                      <form id="rechargeForm" >
+                          <div class="form-group">
+                              <label for="rechargeIT">充值金额</label>
+                              <input type="text" id="rechargeIT" name="balance" class="form-control" placeholder="请输入要充值的金额">
+                              <input id="getCode_btn" type="button" class="form-control" value="确认金额">
+                          </div>
+                          <div class="form-group">
+                              <input type="hidden" name="username" value="${user.username}">
+                          </div>
+                          <div id="payImg">
 
+                          </div>
+                          <div class="form-group" id="check_div">
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                  </div>
+              </div>
+          </div>
+      </div>
 </body>
 </html>

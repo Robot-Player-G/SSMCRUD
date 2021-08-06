@@ -11,6 +11,10 @@ public class TaskList implements Serializable {
     private Integer task_id;
     //任务标题
     private String task_title;
+    //支付状态
+    private Integer status;
+    private Integer check_status;
+    private String check_result;
     //任务发布者
     private String publisher;
     //任务内容
@@ -22,7 +26,7 @@ public class TaskList implements Serializable {
     //任务完成时间，如果未完成即为空
     private Date finish_time;
     //任务报酬
-    private String pay;
+    private Integer pay;
 
     public Integer getTask_id() {
         return task_id;
@@ -38,6 +42,30 @@ public class TaskList implements Serializable {
 
     public void setTask_title(String task_title) {
         this.task_title = task_title;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getCheck_status() {
+        return check_status;
+    }
+
+    public void setCheck_status(Integer check_status) {
+        this.check_status = check_status;
+    }
+
+    public String getCheck_result() {
+        return check_result;
+    }
+
+    public void setCheck_result(String check_result) {
+        this.check_result = check_result;
     }
 
     public String getPublisher() {
@@ -80,11 +108,11 @@ public class TaskList implements Serializable {
         this.finish_time = finish_time;
     }
 
-    public String getPay() {
+    public Integer getPay() {
         return pay;
     }
 
-    public void setPay(String pay) {
+    public void setPay(Integer pay) {
         this.pay = pay;
     }
 
@@ -93,12 +121,15 @@ public class TaskList implements Serializable {
         return "TaskList{" +
                 "task_id=" + task_id +
                 ", task_title='" + task_title + '\'' +
+                ", status=" + status +
+                ", check_status=" + check_status +
+                ", check_result='" + check_result + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", task_content='" + task_content + '\'' +
                 ", publish_time=" + publish_time +
                 ", receiver='" + receiver + '\'' +
                 ", finish_time=" + finish_time +
-                ", pay='" + pay + '\'' +
+                ", pay=" + pay +
                 '}';
     }
 }

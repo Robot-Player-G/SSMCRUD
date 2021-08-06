@@ -2,7 +2,8 @@ $(document).ready(function () {
     //1.检验用户是否已存在
     //2.检验用户名是否为空
     $("#user").bind("keyup",function () {
-       var username = $("#user").val();
+        $("#checkUser").empty();
+        var username = $("#user").val();
         if ($.checkNull(username)==1){
             $("#checkUser").html("请输入用户名");
         }else if(username.indexOf(' ')!=-1){
@@ -14,7 +15,7 @@ $(document).ready(function () {
                 url:"/user/checkUser",
                 data:"username="+username,
                 success:function (result) {
-                    if(result==1) {
+                    if(result=="1") {
                         $("#checkUser").html("用户已存在");
                     }else {
                         $("#checkUser").html("√");

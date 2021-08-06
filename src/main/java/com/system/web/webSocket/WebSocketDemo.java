@@ -114,10 +114,11 @@ public class WebSocketDemo {
                 }
             }
             return true;
-        }
+        }else {
+            logger.info("发送错误：当前连接不包含id为：{}的用户",userId);
 
-        logger.debug("发送错误：当前连接不包含id为：{}的用户",userId);
-        return false;
+            return false;
+        }
     }
 
     /**

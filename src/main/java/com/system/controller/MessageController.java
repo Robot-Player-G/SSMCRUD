@@ -1,6 +1,9 @@
 package com.system.controller;
 
+import com.system.domain.Message;
 import com.system.service.WSMessageService;
+import jnr.ffi.annotations.In;
+import org.aspectj.bridge.IMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/message")
@@ -20,12 +25,13 @@ public class MessageController {
     private Logger logger = LoggerFactory.getLogger(MessageController.class);
 
     //请求入口
-    @RequestMapping(value="/TestWS",method= RequestMethod.GET)
+    @RequestMapping(value="/sendMessage",method= RequestMethod.POST)
     @ResponseBody
-    public String TestWS(@RequestParam(value="userId") String userId,
+    public String TestWS(@RequestParam("userA") String userA,
+                         @RequestParam(value="userB") String userB,
                          @RequestParam(value="message") String message){
-        logger.warn("收到发送请求，向用户{}的消息：{}",userId,message);
-        if(wsMessageService.sendToAllTerminal(userId, message)){
+        logger.info("收到发送请求，{}向用户{}的消息：{}",userB,message);
+        if(wsMessageService.sendToAllTerminal(userA,userB, message)){
             return "success";
         }else{
             return "error";
@@ -45,5 +51,27 @@ public class MessageController {
         }else {
             return "false";
         }
+    }
+
+    /**
+     * 获取未读消息数量
+     * @return
+     */
+    @RequestMapping("/getUnreadMessageCount")
+    @ResponseBody
+    public Integer getUnreadMessageCount(String username){
+        Integer count =wsMessageService.getUnreadMessageCount(username);
+        return count;
+    }
+
+    /**
+     * 获取未读消息数量
+     * @return
+     */
+    @RequestMapping("/getOldMessages")
+    @ResponseBody
+    public List<Message> getOldMessages(String username,String from){
+        List<Message> messages=wsMessageService.getOldMessages(username,from);
+        return messages;
     }
 }

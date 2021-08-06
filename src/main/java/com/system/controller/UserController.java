@@ -1,22 +1,22 @@
 package com.system.controller;
 
-import com.system.domain.User;
+import com.system.domain.*;
+import com.system.service.AdminService;
 import com.system.service.UserService;
 import com.system.utils.CodeCheck;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -27,33 +27,34 @@ public class UserController {
     @Autowired
     private CodeCheck codeCheck;
     //这是一个跳转到userCenter时传值的关键一步
-    private User userFlag = null;
+    private String userFlag = null;
 
-    /**
-     * 用户注册跳转页面
-     * @return
-     */
-    @RequestMapping(value = "/toUserRegister")
-    public String userRegisterTo(User user, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        return "register";
+    //管理员业务层实例
+    @Autowired
+    private AdminService adminService;
+
+    @RequestMapping("/test")
+    @ResponseBody
+    public String testInterface(){
+        return "success111";
     }
-
     /**
      * 用户注册
      * @return
      */
     @RequestMapping(value = "/userRegister")
-    public String userRegister(User user, HttpServletRequest request, HttpSession session,HttpServletResponse response) throws Exception {
+    public String userRegister(String username, String password, HttpServletRequest request, HttpSession session,HttpServletResponse response) throws Exception {
         String userCode = request.getParameter("userCode");
         String randomCode = (String)session.getAttribute("randomCode");
-        User user1 = userService.findOneByName(user.getUsername());
-        String codeCheckResult =(String)codeCheck.codeCheck(randomCode,userCode);
-        if(user1!=null&&user==null){
+        User user1 = userService.findOneByName(username);
+        String codeCheckResult = codeCheck.codeCheck(randomCode,userCode);
+        if(user1!=null||username==null){
             return "error";
         }
         else if(codeCheckResult.equals("success")&&
-                user.getPassword().equals(request.getParameter("repassword"))){
-            userService.saveUser(user);
+                password.equals(request.getParameter("repassword"))){
+            userService.saveUser(username,password);
+            userService.saveUserInfo(username,"nickname","男",new Date());
             response.getWriter().print("<script>alert('注册成功!');</script>");
             return "redirect:/index.jsp?param=1";
         }else {
@@ -69,25 +70,56 @@ public class UserController {
     @RequestMapping(value = "/userLogin",method = RequestMethod.POST)
     public ModelAndView userLogin(User user, HttpServletRequest request, HttpSession session){
         ModelAndView mv = new ModelAndView();
-        mv.addObject("user",user.getUsername());
+        User userInfo = userService.findOneByName(user.getUsername());
+        User user1 = userService.findUserByName(user.getUsername());
         String userCode = request.getParameter("userCode");
         String randomCode = (String)session.getAttribute("randomCode");
-        User user1 = userService.findOneByName(user.getUsername());
-        System.out.println(userCode+" "+randomCode+" "+user.getUsername()+" "+user.getPassword());
-        String codeCheckResult =(String)codeCheck.codeCheck(randomCode,userCode);
-        if(user!=null){
-            if(user1.getUsername().equals(user.getUsername())&&
-               user1.getPassword().equals(user.getPassword())&&
-               codeCheckResult.equals("success")&&user1!=null) {
-                   mv.setViewName("success");
-                   return mv;
-            }else{
-                   mv.setViewName("error");
-                   return mv;
-            }
-        }else {
+        System.out.println(user);
+        if (user.getUsername()==""||user.getPassword()==""){
+            mv.addObject("user","0");
             mv.setViewName("error");
             return mv;
+        }else if (userCode==""){
+            mv.addObject("code","0");
+            mv.setViewName("error");
+            return mv;
+        }else if (user1==null){
+            mv.addObject("user","1");
+            mv.setViewName("error");
+            return mv;
+        }else {
+            String codeCheckResult = codeCheck.codeCheck(randomCode,userCode);
+            if(user1.getUsername().equals(user.getUsername())&&
+                    user1.getPassword().equals(user.getPassword())&&
+                    codeCheckResult.equals("success")&&user1!=null) {
+                userInfo.setPassword(null);
+                mv.addObject("user",userInfo);
+                mv.setViewName("success");
+                return mv;
+            }else{
+                mv.addObject("check","0");
+                mv.setViewName("error");
+                return mv;
+            }
+        }
+    }
+
+    /**
+     * 管理员登录
+     * @return
+     */
+    @RequestMapping(value = "/userLogin",method = RequestMethod.PUT)
+    public String adminLogin(User user,HttpServletRequest request,HttpSession session){
+        Admin admin = new Admin();
+        admin.setAdmin(user.getUsername());
+        admin.setAdminpswd(user.getPassword());
+        String userCode = request.getParameter("userCode");
+        String randomCode = (String)session.getAttribute("randomCode");
+        String codeCheckResult = codeCheck.codeCheck(randomCode,userCode);
+        if (adminService.checkAdmin(admin)&&codeCheckResult.equals("success")){
+            return "redirect:/jump/adminHomePage";
+        }else {
+            return "redirect:/jump/adminError";
         }
     }
 
@@ -97,20 +129,28 @@ public class UserController {
     @RequestMapping(value = "/userCenter")
     public ModelAndView userCenter(String username){
         ModelAndView mv = new ModelAndView();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        if (username==null){
-            mv.addObject("user",userFlag);
-            mv.addObject("focus_flag","userInfo");
-            mv.setViewName("userCenter");
-            return mv;
-        }else {
-            userFlag = userService.findOneByName(username);
-            Date date = new Date();
-            date = userFlag.getBirthday();
-            String timeFormat = sdf.format(date);
-            userFlag.setBirthday(date);
-            return mv;
-        }
+//        if (username==null){
+        mv.addObject("username",username);
+        mv.addObject("focus_flag","userInfo");
+        mv.setViewName("userCenter");
+//            userFlag = null;
+        return mv;
+//        }else {
+//            userFlag = username;
+//            return mv;
+//        }
+    }
+
+    /**
+     * 通过username获取用户信息
+     * @param username
+     * @return
+     */
+    @RequestMapping("/getUserInfoByUsername")
+    @ResponseBody
+    public User getUserInfoByUsername(String username){
+        User user = userService.findOneByName(username);
+        return user;
     }
 
     /**
@@ -120,7 +160,9 @@ public class UserController {
     @RequestMapping(value = "/modifyUserInfo")
     public ModelAndView modifyUserInfo(User user){
         ModelAndView mv = new ModelAndView();
-        mv.addObject("user",user);
+        userService.modifyUserInfo(user);
+        mv.addObject("username",user.getUsername());
+        mv.addObject("focus_flag","userInfo");
         mv.setViewName("userCenter");
         return mv;
     }
@@ -131,8 +173,8 @@ public class UserController {
     @RequestMapping("/checkUser")
     @ResponseBody
     public String checkUser(String username){
-        User user = userService.findOneByName(username);
-        if(user!=null){
+
+        if(userService.isExist(username)){
             return "1";
         }
         else {
@@ -147,20 +189,162 @@ public class UserController {
     @RequestMapping("/historyDeal")
     public ModelAndView historyDeal(String username){
         ModelAndView mv = new ModelAndView();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        if (username==null){
-            mv.addObject("user",userFlag);
-            mv.addObject("focus_flag","userDeal");
-            mv.setViewName("userCenter");
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+//        if (username==null){
+        mv.addObject("username",username);
+        mv.addObject("focus_flag","userDeal");
+        mv.setViewName("userCenter");
+//            userFlag = null;
             return mv;
-        }else {
-            userFlag = userService.findOneByName(username);
-            Date date = new Date();
-            date = userFlag.getBirthday();
-            String timeFormat = sdf.format(date);
-            userFlag.setBirthday(date);
-            return mv;
+//        }else {
+//            userFlag = username;
+//            Date date = new Date();
+//            date = userFlag.getBirthday();
+//            String timeFormat = sdf.format(date);
+//            userFlag.setBirthday(date);
+//            return mv;
+//        }
+    }
+
+    /**
+     * 通过username获取管理员留言
+     * @param username
+     * @return
+     */
+    @RequestMapping("/getAMessageByUsername")
+    @ResponseBody
+    public List<Message> getAMessageByUsername(String username){
+        List<Message> adminMessage = userService.getAMessageByUsername(username);
+        return adminMessage;
+    }
+
+    /**
+     * 用户给管理员留言
+     * @return
+     */
+    @RequestMapping("/sendMessageToAdmin")
+    @ResponseBody
+    public String sendMessageToAdmin(String username,String content){
+        Message userMessage = new Message();
+        userMessage.setFrom(username);
+        userMessage.setTo("admin");
+        userMessage.setContent(content);
+        userMessage.setTime(new Date());
+        userMessage.setType(0);
+        System.out.println(userMessage);
+        userService.sendMessageToAdmin(userMessage);
+        return "success";
+    }
+
+    /**
+     * 用户获取留言
+     * @param userA
+     * @param userB
+     * @return
+     */
+    @RequestMapping("/getMessage")
+    @ResponseBody
+    public List<Message> getMessage(String userA,String userB){
+        List<Message> messages = userService.getMessage(userA,userB);
+        return messages;
+    }
+
+    /**
+     * 用户给用户发送留言
+     * @param userA
+     * @param userB
+     * @param content
+     * @return
+     */
+    @RequestMapping("/leaveMessage")
+    @ResponseBody
+    public String leaveMessage(String userA,String userB,String content){
+        userService.leaveMessage(userA,userB,content);
+        return "success";
+    }
+
+    /**
+     * 管理员获取所有用户信息
+     * @return
+     */
+    @RequestMapping("/adminGetAllUser")
+    @ResponseBody
+    public Map adminGetAllUser(){
+        Map userMap = new HashMap();
+        Integer count = adminService.getAllUserCount();
+        List<User> list = adminService.getAllUser();
+        userMap.put("count",count);
+        userMap.put("List",list);
+        return userMap;
+    }
+
+    /**
+     * 管理员获取充值记录
+     * @return
+     */
+    @RequestMapping("/adminGetRechargeRecord")
+    @ResponseBody
+    public Map adminGetRechargeRecord(){
+        Map rechargeMap = new HashMap();
+        Integer count = adminService.getRechargeRecordCount();
+        List<RechargeRecord> list = adminService.getRechargeRecord();
+        rechargeMap.put("count",count);
+        rechargeMap.put("List",list);
+        return rechargeMap;
+    }
+
+    /**
+     * 管理员删除用户
+     * @param username
+     * @return
+     */
+    @RequestMapping("/adminDeleteUser")
+    @ResponseBody
+    public String adminDeleteUser(String username){
+        if (adminService.deleteUserByName(username))
+        {
+            return "success";
         }
+        return "failed";
+    }
+
+    /**
+     * 管理员删除用户充值记录
+     * @param recharge_id
+     * @return
+     */
+    @RequestMapping("/adminDeleteRechargeRecord")
+    @ResponseBody
+    public String adminDeleteRechargeRecord(String recharge_id){
+        if (adminService.deleteRechargeById(recharge_id))
+        {
+            return "success";
+        }
+        return "failed";
+    }
+
+    /**
+     * 管理员获取所有用户的留言
+     * @return
+     */
+    @RequestMapping("/getAdminMessage")
+    @ResponseBody
+    public List<Message> getAdminMessage(){
+        List<Message> userMessage = adminService.getAdminMessage();
+        return userMessage;
+    }
+
+    /**
+     * 管理员发送留言
+     * @param to
+     * @param content
+     * @return
+     */
+    @RequestMapping("/adminSendMessage")
+    @ResponseBody
+    public String adminSendMessage(String to,String content){
+        adminService.adminSendMessage(to,content);
+        return "success";
     }
 
     /**
@@ -168,37 +352,6 @@ public class UserController {
      */
     @RequestMapping("/userSignOut")
     public String userSignOut(){
-        return "redirect:/index.jsp";
-    }
-
-    @RequestMapping(value = "/modifyUserImage", method = RequestMethod.POST)
-    @ResponseBody
-    // 这里的MultipartFile对象变量名跟表单中的file类型的input标签的name相同，所以框架会自动用MultipartFile对象来接收上传过来的文件，当然也可以使用@RequestParam("img")指定其对应的参数名称
-    public String modifyUserImage(MultipartFile userImage, HttpServletRequest request)
-            throws Exception {
-        System.out.println(userImage.getOriginalFilename());
-        // 如果没有文件上传，MultipartFile也不会为null，可以通过调用getSize()方法获取文件的大小来判断是否有上传文件
-        if (userImage.getSize() > 0) {
-            System.out.println("1");
-            // 得到项目在服务器的真实根路径，如：/home/tomcat/webapp/项目名/images
-//       String path = session.getServletContext().getRealPath("/");
-            String path=request.getSession().getServletContext().getRealPath("/static/images/user");
-            String path1 = "D:\\ProjectWorkspace\\MavenProjSpace\\ssm_information_management_system\\src\\main\\webapp\\static\\images\\user";
-            // 得到文件的原始名称，如：美女.png
-            String fileName = "123.jpg";
-            // 通过文件的原始名称，可以对上传文件类型做限制，如：只能上传jpg和png的图片文件
-            if (fileName.endsWith("jpg") || fileName.endsWith("png") || fileName.endsWith("txt")) {
-                System.out.println("2");
-                System.out.println(path+fileName);
-                File file = new File(path1, fileName);
-                System.out.println(file);
-                userImage.transferTo(file);
-                System.out.println("2.2");
-                return "success";
-            }
-            System.out.println("2.3");
-        }
-        System.out.println("3");
-        return "error";
+        return "redirect:/";
     }
 }

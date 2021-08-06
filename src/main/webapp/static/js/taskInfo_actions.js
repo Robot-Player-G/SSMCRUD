@@ -6,7 +6,6 @@ $(document).ready(function () {
         type:"post",
         data:"task_id="+task_id,
         success:function (data) {
-            console.log(data);
             var statusMsg;
             $("#title").html(data.task_title);
             $("#publisher").html(data.publisher);
@@ -46,7 +45,7 @@ $(document).ready(function () {
                     data:{task_id:task_id,receiver:receiver},
                     success:function (data) {
                         if (data){
-                            // alert("接取成功!");
+                            alert("接取成功!");
                             location.reload();
                         }
                     },
@@ -58,11 +57,11 @@ $(document).ready(function () {
         }
     });
     $("#back_btn").bind("click",function () {
-        $.ajax({
-            url:"/jump/backToTaskCenterFocus",
-            type:"post",
-            data:"username="+receiver,
-        });
-        window.location.href="/jump/backToTaskCenterFocus"
+        // $.ajax({
+        //     url:"/jump/backToTaskCenterFocus",
+        //     type:"post",
+        //     data:"username="+receiver,
+        // });
+        window.location.href="/jump/backToTaskCenterFocus?username="+receiver;
     });
 });

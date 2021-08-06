@@ -1,26 +1,35 @@
 package com.system.controller;
 
-import com.system.eth.MyEth;
+import com.system.domain.TaskList;
+import com.system.domain.User;
+import com.system.service.AdminService;
+import com.system.service.TaskService;
+import com.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
+
 
 @Controller
 @RequestMapping(value = "/jump")
 public class JumpController {
 
-    //username传值
-    private String usernameFlag = null;
-    //消息发送方
-    private String userAFlag = null;
-    //消息接收方
-    private String userBFlag = null;
-
-    private String taskIdFlag = null;
     @Autowired
-    private MyEth myEth;
+    private UserService userService;
+
+    /**
+     * 用户注册跳转页面
+     * @return
+     */
+    @RequestMapping(value = "/toUserRegister")
+    public String userRegisterTo() throws Exception {
+        return "register";
+    }
+
     /**
      * 跳转到新手教程
      * @return
@@ -42,59 +51,146 @@ public class JumpController {
     @RequestMapping(value = "/backToTaskCenterFocus")
     public ModelAndView backToTaskCenterFocus(String username){
         ModelAndView mv = new ModelAndView();
-        if (username==null){
+//        if (username==null){
             String backFlag = "taskCenter";
-            mv.addObject("user",usernameFlag);
+            User userInfo = userService.findOneByName(username);
+            mv.addObject("user",userInfo);
             mv.addObject("backFlag",backFlag);
+//            usernameFlag = null;
             mv.setViewName("success");
-        }else {
-            usernameFlag = username;
-        }
+//        }else {
+//            usernameFlag = username;
+//        }
         return mv;
     }
+
 
     @RequestMapping(value = "/backToHomePageFocus")
     public ModelAndView backToHomePageFocus(String username){
         ModelAndView mv = new ModelAndView();
-        if (username==null){
-            mv.addObject("user",usernameFlag);
-            mv.setViewName("success");
-        }else {
-            usernameFlag = username;
-        }
+//        if (username==null){
+        User userInfo = userService.findOneByName(username);
+        mv.addObject("user",userInfo);
+        mv.setViewName("success");
+//            usernameFlag = null;
+//        }else {
+//            usernameFlag = username;
+//        }
         return mv;
     }
 
+    /**
+     * 前往聊天室
+     * @param userA
+     * @param userB
+     * @return
+     */
     @RequestMapping("/gotoChatRoom")
-    public ModelAndView gotoChatRoom(String userA,String userB){
+    public ModelAndView gotoChatRoom(@RequestParam("userA") String userA, @RequestParam("userB") String userB){
         ModelAndView mv = new ModelAndView();
-        if(userA == null && userB==null){
-            mv.addObject("userA",userAFlag);
-            mv.addObject("userB",userBFlag);
-            mv.setViewName("chatRoom");
-        }else{
-            userAFlag = userA;
-            userBFlag = userB;
-        }
+//        if(userA == null && userB==null){
+        mv.addObject("userA",userA);
+        mv.addObject("userB",userB);
+        mv.setViewName("chatRoom");
+//        }else{
+//            userAFlag = userA;
+//            userBFlag = userB;
+//        }
         return mv;
     }
 
+    /**
+     * 前往提交方案页面
+     * @param task_id
+     * @return
+     */
     @RequestMapping("/gotoSubmitTask")
     public ModelAndView gotoSubmitTask(String task_id){
         ModelAndView mv = new ModelAndView();
-        if(task_id==null){
-            mv.addObject("taskId",taskIdFlag);
+//        if(task_id==null){
+            mv.addObject("taskId",task_id);
             mv.setViewName("submitTask");
-        }else {
-            taskIdFlag = task_id;
-        }
+//            taskIdFlag = null;
+//        }else {
+//            taskIdFlag = task_id;
+//        }
         return mv;
     }
 
-    @RequestMapping("/getHashStr")
-    @ResponseBody
-    public String getHashStr() throws Exception{
+    /**
+     * 任务完成回到用户中心
+     * @param hash
+     * @return
+     */
+    @RequestMapping("/backToUserCenter")
+    public ModelAndView backToUserCenter(String hash){
+        ModelAndView mv = new ModelAndView();
+//        if(hash==null){
+            mv.addObject("hash",hash);
+            mv.setViewName("userCenter");
+//            hashFlag = null ;
+//        }else {
+//            hashFlag = hash;
+//        }
+        return mv;
+    }
 
-        return myEth.getHash();
+    /**
+     *跳转到管理员后台首页
+     * @return
+     */
+    @RequestMapping("/adminHomePage")
+    public String toAdminHomePage(){
+        return "adminHomePage";
+    }
+
+    /**
+     * 跳转到管理员管理用户页面
+     * @return
+     */
+    @RequestMapping("/adminUserManagement")
+    public String toAdminUserManagement(){
+        return "adminUserManagement";
+    }
+
+    /**
+     * 跳转到管理员管理任务页面
+     * @return
+     */
+    @RequestMapping("/adminTaskManagement")
+    public String toAdminTaskManagement(){
+        return "adminTaskManagement";
+    }
+
+    /**
+     * 跳转到管理员留言页面
+     * @return
+     */
+    @RequestMapping("/adminMessage")
+    public String toAdminMessage(){
+        return "adminMessage";
+    }
+
+    /**
+     * 跳转到admin错误界面
+     * @return
+     */
+    @RequestMapping("/adminError")
+    public String toAdminError(){
+        return "adminError";
+    }
+
+    @RequestMapping("/dataNullPage")
+    public String dataNullPage(){
+        return "dataNull";
+    }
+
+    /**
+     * 管理员退出
+     * @return
+     */
+    @RequestMapping("/adminSignOut")
+    public String adminSignOut(){
+        return "redirect:/";
     }
 }

@@ -2,67 +2,105 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ssm_information_management_system:war" />
+      <artifact name="ssm_information_management_system:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="695e1be4-9e84-4cfa-a0c8-46e0ee450d15" name="Default Changelist" comment="2020/12/25 new commit!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/TaskDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/TaskList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/service/TaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/TaskServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/Code.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/CodeCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/DateConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/RandomTaskId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskInfo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskPublish.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userCenter.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-theme.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-theme.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/layout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/ico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/index_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/npm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/register_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/success_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/taskInfo_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/taskPublish_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/userCenter_actions.js" afterDir="false" />
+    <list default="true" id="695e1be4-9e84-4cfa-a0c8-46e0ee450d15" name="Default Changelist" comment="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/myApp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ssm_information_management_system_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/user.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eth_interface/.idea/eth_interface.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/alipay/config/AlipayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/aspect/LogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/AlipayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/ControllerExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/EthFileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/AdminDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/MessageDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/DealRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/EthData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/RechargeRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/req/UserReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/resp/CommonResp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/resp/UserResp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/ToBufferedImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminError.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminHomePage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminMessage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminTaskManagement.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/adminUserManagement.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/dataNull.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/recharge.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.close.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.fastpay.refund.query.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.page.pay.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.query.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/alipay.trade.refund.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/notify_url.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/return_url.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap-maizi.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.new.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/b1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/b2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/b3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/images/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminError_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminHomePage_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminMessage_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminTaskManagement_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/adminUserManagement_actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/error_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/ClickController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/JumpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/JumpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/TaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/TaskDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/domain/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/TaskList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/eth/MyEth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/eth/MyEth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/TaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/WSMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/WSMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/TaskServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/system/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/utils/CodeCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/utils/CodeCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/system/web/webSocket/WebSocketDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/system/web/webSocket/WebSocketDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/chatRoom.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/chatRoom.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/submitTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/submitTask.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskPublish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/taskPublish.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userCenter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userCenter.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/chatRoom_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/chatRoom_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/index_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/index_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/register_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/register_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/submitTask_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/submitTask_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/success_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/success_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/taskInfo_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/taskInfo_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/taskPublish_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/taskPublish_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/userCenter_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/userCenter_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/web3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/web3.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/system/controller/ClickController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/system/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/system/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/system/domain/User.class" afterDir="false" />
@@ -71,8 +109,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbcConfig.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/ClickController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/domain/User.class" afterDir="false" />
@@ -80,9 +118,8 @@
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/com/system/service/impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/jdbcConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/jdbcConfig.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/classes/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/lib/aspectjweaver-1.6.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/error.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/pages/success.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_information_management_system/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_information_management_system/index.jsp" afterDir="false" />
@@ -95,15 +132,66 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ssm_system" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ssm_system" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ssm_system" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ssm_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ssm_system" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ssm_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="message: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ssm_system" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ssm_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="recharge_record: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ssm_system" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ssm_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="userinfo_tbl: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="Interface" />
         <option value="facelets" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Interface" />
         <option value="Jsp File" />
         <option value="Class" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -148,30 +236,34 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32068965" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\java\com\system\alipay\config" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\css" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\fonts" />
+      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.system.resp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\images\user" />
       <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\images" />
       <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static" />
       <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp" />
-      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main" />
-      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\images" />
-      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\WEB-INF\pages" />
-      <recent name="D:\ProjectWorkspace\MavenProjSpace\ssm_information_management_system\src\main\webapp\static\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -244,10 +336,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ssm" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="ssm" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11 (2)">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="ssm_information_management_system:war">
+        <artifact name="ssm_information_management_system:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -255,6 +348,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_ssm_information_management_system_2" />
+        <option name="HTTP_PORT" value="8080" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -312,7 +406,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="ssm_information_management_system:war" />
+          <artifact name="ssm_information_management_system:war exploded" />
         </option>
       </method>
     </configuration>
@@ -411,7 +505,143 @@
       <workItem from="1608728504612" duration="6391000" />
       <workItem from="1608781595080" duration="2147000" />
       <workItem from="1608798159296" duration="5255000" />
-      <workItem from="1608860207273" duration="3895000" />
+      <workItem from="1608860207273" duration="5901000" />
+      <workItem from="1608887937339" duration="1703000" />
+      <workItem from="1608891516656" duration="1384000" />
+      <workItem from="1610352662909" duration="2875000" />
+      <workItem from="1610424125762" duration="585000" />
+      <workItem from="1610437593357" duration="617000" />
+      <workItem from="1610446887025" duration="1040000" />
+      <workItem from="1610501988120" duration="857000" />
+      <workItem from="1610596142098" duration="807000" />
+      <workItem from="1610609345380" duration="1922000" />
+      <workItem from="1610793973395" duration="582000" />
+      <workItem from="1610874421595" duration="2258000" />
+      <workItem from="1611191037951" duration="5574000" />
+      <workItem from="1611289510070" duration="2830000" />
+      <workItem from="1611297338641" duration="10466000" />
+      <workItem from="1611328958763" duration="1173000" />
+      <workItem from="1611364419534" duration="5749000" />
+      <workItem from="1611446586457" duration="6109000" />
+      <workItem from="1611537443317" duration="588000" />
+      <workItem from="1611654444469" duration="2279000" />
+      <workItem from="1611709080744" duration="3730000" />
+      <workItem from="1612181625130" duration="205000" />
+      <workItem from="1612251915235" duration="1969000" />
+      <workItem from="1612317755229" duration="607000" />
+      <workItem from="1612536390494" duration="922000" />
+      <workItem from="1612597319989" duration="22521000" />
+      <workItem from="1612661665833" duration="8321000" />
+      <workItem from="1612695002105" duration="11005000" />
+      <workItem from="1612747808258" duration="24679000" />
+      <workItem from="1612883322485" duration="2007000" />
+      <workItem from="1612948826902" duration="13440000" />
+      <workItem from="1612997886591" duration="11592000" />
+      <workItem from="1613468562050" duration="3278000" />
+      <workItem from="1613487353790" duration="3167000" />
+      <workItem from="1613635879019" duration="182000" />
+      <workItem from="1613908577549" duration="1902000" />
+      <workItem from="1613910641029" duration="3466000" />
+      <workItem from="1613953306968" duration="7238000" />
+      <workItem from="1613990554633" duration="7878000" />
+      <workItem from="1614064136917" duration="590000" />
+      <workItem from="1614185305658" duration="68000" />
+      <workItem from="1614186018584" duration="1000000" />
+      <workItem from="1614216972424" duration="3101000" />
+      <workItem from="1614313380495" duration="1850000" />
+      <workItem from="1614408727634" duration="600000" />
+      <workItem from="1614481356694" duration="7730000" />
+      <workItem from="1614602779944" duration="4821000" />
+      <workItem from="1614649601214" duration="5414000" />
+      <workItem from="1614873029469" duration="423000" />
+      <workItem from="1614940108729" duration="1234000" />
+      <workItem from="1615003753058" duration="592000" />
+      <workItem from="1615040431525" duration="2178000" />
+      <workItem from="1615077755606" duration="8737000" />
+      <workItem from="1615217209058" duration="2215000" />
+      <workItem from="1615253669027" duration="5711000" />
+      <workItem from="1615360423712" duration="4585000" />
+      <workItem from="1615461124952" duration="9189000" />
+      <workItem from="1615515460422" duration="2449000" />
+      <workItem from="1615685843574" duration="576000" />
+      <workItem from="1615790651699" duration="3007000" />
+      <workItem from="1615871973532" duration="2180000" />
+      <workItem from="1615964078061" duration="2141000" />
+      <workItem from="1616148580118" duration="3878000" />
+      <workItem from="1616234139442" duration="2929000" />
+      <workItem from="1616315901715" duration="4905000" />
+      <workItem from="1616411889274" duration="4171000" />
+      <workItem from="1616481712095" duration="4434000" />
+      <workItem from="1617095215509" duration="477000" />
+      <workItem from="1617169772344" duration="51765000" />
+      <workItem from="1617346569976" duration="4502000" />
+      <workItem from="1617364000586" duration="502000" />
+      <workItem from="1617365632106" duration="243000" />
+      <workItem from="1617434265694" duration="1186000" />
+      <workItem from="1617437589245" duration="672000" />
+      <workItem from="1617451642799" duration="3519000" />
+      <workItem from="1617494873694" duration="9213000" />
+      <workItem from="1617507343226" duration="504000" />
+      <workItem from="1617518075096" duration="2308000" />
+      <workItem from="1617527255819" duration="10219000" />
+      <workItem from="1617581680084" duration="3625000" />
+      <workItem from="1617670384661" duration="3402000" />
+      <workItem from="1617862709119" duration="2610000" />
+      <workItem from="1617943021071" duration="7799000" />
+      <workItem from="1617972078964" duration="5420000" />
+      <workItem from="1618018755073" duration="14090000" />
+      <workItem from="1618126741420" duration="5674000" />
+      <workItem from="1618137364452" duration="2936000" />
+      <workItem from="1618153271616" duration="5706000" />
+      <workItem from="1618194417081" duration="4062000" />
+      <workItem from="1618232478031" duration="12785000" />
+      <workItem from="1618275849673" duration="10214000" />
+      <workItem from="1618293001488" duration="16077000" />
+      <workItem from="1618365482657" duration="2547000" />
+      <workItem from="1618409780747" duration="10124000" />
+      <workItem from="1618442746978" duration="12826000" />
+      <workItem from="1618455902689" duration="4660000" />
+      <workItem from="1618466661358" duration="2599000" />
+      <workItem from="1618484845785" duration="6115000" />
+      <workItem from="1618538383484" duration="4210000" />
+      <workItem from="1618628171586" duration="1281000" />
+      <workItem from="1618707652625" duration="5430000" />
+      <workItem from="1618734618202" duration="3129000" />
+      <workItem from="1618754590004" duration="635000" />
+      <workItem from="1618796515813" duration="644000" />
+      <workItem from="1618907985361" duration="8995000" />
+      <workItem from="1619180838292" duration="4671000" />
+      <workItem from="1619234060681" duration="1182000" />
+      <workItem from="1619319950810" duration="568000" />
+      <workItem from="1619338007905" duration="4700000" />
+      <workItem from="1619973713568" duration="1321000" />
+      <workItem from="1620025220639" duration="1004000" />
+      <workItem from="1620117230958" duration="1197000" />
+      <workItem from="1620173577780" duration="11102000" />
+      <workItem from="1620223301446" duration="931000" />
+      <workItem from="1620288595610" duration="2541000" />
+      <workItem from="1620314377551" duration="6339000" />
+      <workItem from="1620345067075" duration="3325000" />
+      <workItem from="1620400609569" duration="538000" />
+      <workItem from="1620569916317" duration="3709000" />
+      <workItem from="1620626224693" duration="15884000" />
+      <workItem from="1620721747085" duration="1663000" />
+      <workItem from="1620744771132" duration="3526000" />
+      <workItem from="1620786981224" duration="2019000" />
+      <workItem from="1620831492255" duration="6285000" />
+      <workItem from="1620861406134" duration="11046000" />
+      <workItem from="1620884434523" duration="1408000" />
+      <workItem from="1620888865389" duration="3396000" />
+      <workItem from="1621838466044" duration="934000" />
+      <workItem from="1621842988203" duration="1498000" />
+      <workItem from="1623120277029" duration="69000" />
+      <workItem from="1623120478801" duration="536000" />
+      <workItem from="1627646713229" duration="1139000" />
+      <workItem from="1627960026267" duration="33881000" />
+      <workItem from="1628039881604" duration="29765000" />
+      <workItem from="1628126955262" duration="32488000" />
+      <workItem from="1628212785217" duration="13182000" />
+      <workItem from="1628236265026" duration="3048000" />
     </task>
     <task id="LOCAL-00001" summary="2020/07/07 new commit!">
       <created>1594131135305</created>
@@ -420,7 +650,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594131135305</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2020/12/25 new commit!">
+      <created>1608864417146</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608864417146</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2020/12/25 new commit!">
+      <created>1613490538100</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613490538100</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,116 +673,125 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2020/07/07 new commit!" />
     <MESSAGE value="2020/12/25 new commit!" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020/12/25 new commit!" />
+    <MESSAGE value="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021/08/06 项目bug修改，整合了支付宝SandBox环境扫码支付，Spring AOP打印请求参数和返回参数，WebSocket聊天优化（实现可查看历史消息记录以及对方不在线时将消息存储到数据库）" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="366" y="0" width="647" height="728" key="#SsmSystem" timestamp="1605399276665">
+    <state x="275" y="25" key="#Template_Data_Languages" timestamp="1627980503910">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="366" y="0" width="647" height="728" key="#SsmSystem/0.0.1366.728@0.0.1366.728" timestamp="1605399276665" />
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605617588707">
+    <state x="275" y="25" key="#Template_Data_Languages/0.0.1366.728@0.0.1366.728" timestamp="1627980503910" />
+    <state x="120" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1628238281044">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605617588707" />
-    <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1608730409769">
+    <state x="120" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1628238281044" />
+    <state x="733" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1628238384312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="57" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1608730409768" />
-    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606403016000">
+    <state x="733" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1628238384312" />
+    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628050915862">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606403016000" />
-    <state x="108" y="0" key="CommitChangelistDialog2" timestamp="1608864005428">
+    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1628050915862" />
+    <state x="100" y="0" key="CommitChangelistDialog2" timestamp="1628239372431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="108" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1608864005428" />
-    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1605315894280">
+    <state x="100" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1628239372431" />
+    <state x="463" y="96" key="FileChooserDialogImpl" timestamp="1627965366699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605315894280" />
-    <state width="1237" height="196" key="GridCell.Tab.0.bottom" timestamp="1608864005631">
+    <state x="463" y="96" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1627965366699" />
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.0.center" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.0.left" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.0.right" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.1.bottom" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.1.center" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.1.left" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.1.right" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.2.bottom" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.2.center" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.2.center" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.2.left" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.2.left" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1237" height="196" key="GridCell.Tab.2.right" timestamp="1608864005631">
+    <state width="1323" height="223" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.2.right" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1237" height="196" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1608864005631" />
-    <state width="1323" height="223" key="GridCell.Tab.3.bottom" timestamp="1607342890294">
+    <state width="1323" height="223" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.3.bottom" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607342890294" />
-    <state width="1323" height="223" key="GridCell.Tab.3.center" timestamp="1607342890294">
+    <state width="1323" height="223" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.3.center" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1607342890294" />
-    <state width="1323" height="223" key="GridCell.Tab.3.left" timestamp="1607342890294">
+    <state width="1323" height="223" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.3.left" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1607342890294" />
-    <state width="1323" height="223" key="GridCell.Tab.3.right" timestamp="1607342890294">
+    <state width="1323" height="223" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="1323" height="223" key="GridCell.Tab.3.right" timestamp="1628239372506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1607342890294" />
-    <state x="239" y="0" key="SettingsEditor" timestamp="1608694693327">
+    <state width="1323" height="223" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1628239372506" />
+    <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1627970707074">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="239" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1608694693327" />
-    <state x="354" y="36" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604843521769">
+    <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1627970707074" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1628238953378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="354" y="36" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1604843521769" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1605431515335">
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1628238953378" />
+    <state width="431" height="448" key="SwitcherDM" timestamp="1628003738429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605431515335" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1608647529957">
+    <state width="431" height="448" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1628003738429" />
+    <state x="413" y="172" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1628238352221">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608647529957" />
-    <state x="345" y="56" key="spring file set editor" timestamp="1605703184980">
+    <state x="413" y="172" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1628238352221" />
+    <state x="392" y="12" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1628215005722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="345" y="56" key="spring file set editor/0.0.1366.728@0.0.1366.728" timestamp="1605703184980" />
+    <state x="392" y="12" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1628215005722" />
+    <state x="303" y="95" width="759" height="538" key="find.popup" timestamp="1627998804022">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="303" y="95" width="759" height="538" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1627998804022" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1620867603057">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1620867603057" />
   </component>
 </project>

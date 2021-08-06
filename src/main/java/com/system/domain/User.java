@@ -7,12 +7,13 @@ import java.util.Date;
  * 用户信息实体类
  */
 public class User implements Serializable {
-    //用户名，密码，昵称，性别，生日
+    //用户名，密码，昵称，性别，生日,余额
     private String username;
     private String password;
     private String nickname;
     private String sex;
     private Date birthday;
+    private Integer balance;
 
     public String getUsername() {
         return username;
@@ -54,6 +55,14 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
+    public Integer getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Integer balance) {
+        this.balance = balance;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -62,6 +71,7 @@ public class User implements Serializable {
                 ", nickname='" + nickname + '\'' +
                 ", sex='" + sex + '\'' +
                 ", birthday=" + birthday +
+                ", balance=" + balance +
                 '}';
     }
 }

@@ -47,10 +47,11 @@
         </tx:attributes>
     </tx:advice>
     <!-- 配置aop -->
-    <aop:config>
-        <!-- 配置切入点表达式 -->
+    <!--<aop:config>
+        &lt;!&ndash; 配置切入点表达式 &ndash;&gt;
         <aop:pointcut expression="execution(* com.system.service.impl.*.*(..))" id="pt1"/>
-        <!-- 建立通知和切入点表达式的关系 -->
+        &lt;!&ndash; 建立通知和切入点表达式的关系 &ndash;&gt;
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pt1"/>
-    </aop:config>
+    </aop:config>-->
+
 </beans>

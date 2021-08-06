@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 public class CodeCheck {
     private String flag;
     public String codeCheck(String randomCode,String userCode){
-
         if(randomCode.equalsIgnoreCase(userCode)){
             return flag="success";
         }else {
