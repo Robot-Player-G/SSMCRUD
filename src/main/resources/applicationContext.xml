@@ -36,22 +36,25 @@
         <property name="basePackage" value="com.system.dao"></property>
     </bean>
 
+    <!--Spring声明式事务控制-->
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="comboPooledDataSource"></property>
     </bean>
     <!-- 配置事务的通知 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <tx:attributes> <tx:method name="*" propagation="REQUIRED" read-only="false"/>
+        <!--配置事务的属性-->
+        <tx:attributes>
             <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="updatePaymentStatus" />
         </tx:attributes>
     </tx:advice>
     <!-- 配置aop -->
-    <!--<aop:config>
-        &lt;!&ndash; 配置切入点表达式 &ndash;&gt;
+    <aop:config>
+        <!-- 配置切入点表达式 -->
         <aop:pointcut expression="execution(* com.system.service.impl.*.*(..))" id="pt1"/>
-        &lt;!&ndash; 建立通知和切入点表达式的关系 &ndash;&gt;
+        <!-- 建立通知和切入点表达式的关系 -->
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pt1"/>
-    </aop:config>-->
+    </aop:config>
 
 </beans>
