@@ -72,18 +72,6 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Boolean spendMoney(String username,Integer balance) {
-        Integer sqlBalance = taskDao.getBalanceByUsername(username);
-        if (sqlBalance < balance){
-            return false;
-        }else {
-            sqlBalance = sqlBalance - balance;
-            taskDao.spendMoney(username,sqlBalance);
-            return true;
-        }
-    }
-
-    @Override
     public String getHashByTaskId(String username, String task_id) {
         return taskDao.getHashByTaskId(username,task_id);
     }
@@ -101,7 +89,6 @@ public class TaskServiceImpl implements TaskService {
         record.setReceiver(list.getReceiver());
         record.setMoney(list.getPay());
         record.setHash(hash);
-        System.out.println(record);
         taskDao.saveHash(record);
     }
 

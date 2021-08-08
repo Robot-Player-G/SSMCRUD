@@ -51,13 +51,6 @@ public interface TaskService {
     public void saveTaskInfo(TaskList taskList);
 
     /**
-     * 花费余额
-     * @param username
-     * @return
-     */
-    public Boolean spendMoney(String username,Integer balance);
-
-    /**
      * 获取交易hash
      * @param username
      * @param task_id

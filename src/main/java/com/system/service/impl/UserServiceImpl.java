@@ -7,9 +7,9 @@ import com.system.domain.User;
 import com.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
+
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
@@ -98,7 +98,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void rechargeMoney(String username, Integer balance) {
-        userDao.addBalanceByUsername(username,balance);
+        Integer SqlBalance = getBalanceByUsername(username);
+        Integer balance1 = balance + SqlBalance;
+        userDao.addBalanceByUsername(username,balance1);
     }
 
     @Override
