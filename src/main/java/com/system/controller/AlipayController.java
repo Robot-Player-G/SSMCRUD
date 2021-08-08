@@ -2,7 +2,6 @@ package com.system.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
@@ -11,7 +10,6 @@ import com.alipay.api.request.AlipayTradePrecreateRequest;
 import com.alipay.api.request.AlipayTradeQueryRequest;
 import com.alipay.api.response.AlipayTradePrecreateResponse;
 import com.google.zxing.BarcodeFormat;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.system.alipay.config.AlipayConfig;
@@ -19,12 +17,9 @@ import com.system.domain.RechargeRecord;
 import com.system.domain.User;
 import com.system.service.UserService;
 import com.system.utils.ToBufferedImage;
-import jnr.ffi.annotations.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
-import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,11 +32,12 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
+/**
+ * 支付接口
+ */
 @Controller
 @RequestMapping("/alipay")
 public class AlipayController {
@@ -54,26 +50,22 @@ public class AlipayController {
     /**
      * 第三方连接支付
      * @param tradeNo
-     * @param request
      * @param response
      * @throws Exception
      */
     @RequestMapping(value = "/rechargePay", produces = "text/html; charset=UTF-8", method = RequestMethod.POST)
-    public void rechargePay(@RequestParam("tradeNo") String tradeNo, HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+    public void rechargePay(@RequestParam("tradeNo") String tradeNo, HttpServletResponse response) throws Exception {
         String username = tradeNo.split("-")[0];
         String balance = tradeNo.split("-")[1];
-        String header = request.getHeader("method");
-        System.out.println(header);
-        System.out.println("开始处理支付");
+        log.info("开始处理支付");
         //获得初始化的AlipayClient
-        AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id, AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
-
+        AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id,
+                AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key,
+                AlipayConfig.sign_type);
         //设置请求参数
         AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();
         alipayRequest.setReturnUrl(AlipayConfig.return_url);
         alipayRequest.setNotifyUrl(AlipayConfig.notify_url);
-
         //商户订单号，商户网站订单系统中唯一订单号，必填
         String out_trade_no = username+"-"+System.currentTimeMillis();
         //付款金额，必填
@@ -84,14 +76,13 @@ public class AlipayController {
         String body = username;
         // 该笔订单允许的最晚付款时间，逾期将关闭交易。取值范围：1m～15d。m-分钟，h-小时，d-天，1c-当天（1c-当天的情况下，无论交易何时创建，都在0点关闭）。 该参数数值不接受小数点， 如 1.5h，可转换为 90m。
         String timeout_express = "1c";
-
+        //设置请求参数
         alipayRequest.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
                 + "\"total_amount\":\""+ total_amount +"\","
                 + "\"subject\":\""+ subject +"\","
                 + "\"body\":\""+ body +"\","
                 + "\"timeout_express\":\""+timeout_express+"\","
                 + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
-
         //若想给BizContent增加其他可选请求参数，以增加自定义超时时间参数timeout_express来举例说明
         //alipayRequest.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
         //		+ "\"total_amount\":\""+ total_amount +"\","
@@ -100,7 +91,6 @@ public class AlipayController {
         //		+ "\"timeout_express\":\"10m\","
         //		+ "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
         //请求参数可查阅【电脑网站支付的API文档-alipay.trade.page.pay-请求参数】章节
-
         String result = alipayClient.pageExecute(alipayRequest).getBody();
         response.setContentType("text/html; charset=utf-8");
         PrintWriter out = response.getWriter();
@@ -121,16 +111,15 @@ public class AlipayController {
         String out_trade_no = tradeNo;
         String username = tradeNo.split("-")[0];
         String balance = tradeNo.split("-")[1];
-        System.out.println("开始QR处理支付");
-        System.out.println("out_trade_no="+out_trade_no);
+        log.info("开始QR处理支付");
         //获得初始化的AlipayClient
-        AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id, AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
-
+        AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id,
+                AlipayConfig.merchant_private_key, "json", AlipayConfig.charset,
+                AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
         //设置请求参数
         AlipayTradePrecreateRequest alipayRequest = new AlipayTradePrecreateRequest();
         alipayRequest.setReturnUrl(AlipayConfig.return_url);
         alipayRequest.setNotifyUrl(AlipayConfig.notify_url);
-
         //商户订单号，商户网站订单系统中唯一订单号，必填
 //        String out_trade_no = username+"-"+System.currentTimeMillis();
         //付款金额，必填
@@ -141,14 +130,13 @@ public class AlipayController {
         String body = username;
         // 该笔订单允许的最晚付款时间，逾期将关闭交易。取值范围：1m～15d。m-分钟，h-小时，d-天，1c-当天（1c-当天的情况下，无论交易何时创建，都在0点关闭）。 该参数数值不接受小数点， 如 1.5h，可转换为 90m。
         String timeout_express = "1c";
-
+        //设置请求参数
         alipayRequest.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
                 + "\"total_amount\":\""+ total_amount +"\","
                 + "\"subject\":\""+ subject +"\","
                 + "\"body\":\""+ body +"\","
                 + "\"timeout_express\":\""+timeout_express+"\","
                 + "\"product_code\":\"FACE_TO_FACE_PAYMENT\"}");
-
         //若想给BizContent增加其他可选请求参数，以增加自定义超时时间参数timeout_express来举例说明
         //alipayRequest.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
         //		+ "\"total_amount\":\""+ total_amount +"\","
@@ -157,10 +145,9 @@ public class AlipayController {
         //		+ "\"timeout_express\":\"10m\","
         //		+ "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
         //请求参数可查阅【电脑网站支付的API文档-alipay.trade.page.pay-请求参数】章节
-
         final AlipayTradePrecreateResponse payResponse = alipayClient.execute(alipayRequest);
         if(payResponse.isSuccess()){
-            System.out.println("调用成功");
+            log.info("调用成功");
 //            System.out.println(payResponse.getBody());
             //获取二维码内容字符串
             final String qrCode = payResponse.getQrCode();
@@ -173,7 +160,7 @@ public class AlipayController {
             //转换成png格式的IO流
             ImageIO.write(image, "png", response.getOutputStream());
         } else {
-            System.out.println("调用失败");
+            log.error("调用失败");
         }
     }
 
@@ -181,7 +168,7 @@ public class AlipayController {
      * @Description: 支付宝同步通知页面
      */
     @RequestMapping(value = "/alipayReturnNotice")
-    public ModelAndView alipayReturnNotice(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView alipayReturnNotice(HttpServletRequest request) throws Exception {
 
         log.info("支付成功, 进入同步通知接口...");
 
@@ -245,7 +232,7 @@ public class AlipayController {
      * @Description: 支付宝异步 通知页面
      */
     @RequestMapping(value = "/alipayNotifyNotice")
-    public void alipayNotifyNotice(HttpServletRequest request, HttpServletRequest response) throws Exception {
+    public void alipayNotifyNotice(HttpServletRequest request) throws Exception {
 
         log.info("支付成功, 进入异步通知接口...");
 
@@ -333,33 +320,26 @@ public class AlipayController {
 
     @RequestMapping(value = "/checkPay", method = RequestMethod.POST)
     @ResponseBody
-    public String checkPay(@RequestParam("tradeNo") String tradeNo, HttpServletRequest request) throws Exception {
-        System.out.println("tradeNo = "+tradeNo);
+    public String checkPay(@RequestParam("tradeNo") String tradeNo) throws Exception {
         //解析出username和balance
         String username = tradeNo.split("-")[0];
-        System.out.println(username);
         Integer balance = Integer.parseInt(tradeNo.split("-")[1]);
         Long rechargeID = Long.parseLong(tradeNo.split("-")[2]);
-
         //获得初始化的AlipayClient
-        AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id, AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
-
+        AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id,
+                AlipayConfig.merchant_private_key, "json", AlipayConfig.charset,
+                AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
         //设置请求参数
         AlipayTradeQueryRequest alipayRequest = new AlipayTradeQueryRequest();
-
         alipayRequest.setBizContent("{\"out_trade_no\":\""+ tradeNo +"\"}");
         //请求
         String result = alipayClient.execute(alipayRequest).getBody();
-
+        //解析返回的result数据
         JSONObject object = (JSONObject) JSON.parse(result);
-        System.out.println(object.get("alipay_trade_query_response"));
         JSONObject msg = (JSONObject) JSON.parse(object.get("alipay_trade_query_response").toString());
-
+        //判断 msg 的值，为Success则执行充值操作，反之则返回failure
         if (msg.get("msg").equals("Success")){
-            Integer SqlBalance = userService.getBalanceByUsername(username);
-            Integer balance1 = balance + SqlBalance;
-            userService.rechargeMoney(username,balance1);
-            User user = userService.findOneByName(username);
+            userService.rechargeMoney(username,balance);
             RechargeRecord rechargeRecord = new RechargeRecord(rechargeID,username,new Date(),balance);
             userService.addRechargeRecord(rechargeRecord);
             return "success";
