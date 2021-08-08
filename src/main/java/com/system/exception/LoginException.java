@@ -1,7 +1,5 @@
 package com.system.exception;
 
-
-
 public class LoginException extends Exception{
     private String message;
 

@@ -1,12 +1,5 @@
 $(document).ready(function () {
     var username = $("#hidden-username").val();
-    // var year = birthday.getFullYear();
-    // var month = birthday.getMonth()+1;
-    // var day = birthday.getDate();
-    // var newDate = year+"-"+month+"-"+day;
-    // $("#birthday").val(newDate);
-    // console.log(username);
-    // console.log(year+"-"+month+"-"+day);
     var  focus_flag = $("#hidden-flag").val();
     if (focus_flag == "userInfo"){
         $("#info-li").addClass("active");
@@ -322,6 +315,8 @@ $.extend({
                         if (data=="success"){
                             alert("支付成功!");
                             location.reload();
+                        }else {
+                            console.log(data);
                         }
                     }
                 });

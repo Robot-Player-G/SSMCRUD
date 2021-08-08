@@ -50,7 +50,7 @@ public class UserController {
         User user1 = userService.findOneByName(username);
         String codeCheckResult = codeCheck.codeCheck(randomCode,userCode);
         if(user1!=null||username==null){
-            return "error";
+            throw new LoginException("用户名不能为空或用户已存在！");
         }
         else if(codeCheckResult.equals("success")&&
                 password.equals(request.getParameter("repassword"))){
@@ -59,7 +59,7 @@ public class UserController {
             response.getWriter().print("<script>alert('注册成功!');</script>");
             return "redirect:/index.jsp?param=1";
         }else {
-            return "error";
+            throw new LoginException("验证码错误或两次输入密码不匹配！");
         }
     }
 
@@ -122,16 +122,10 @@ public class UserController {
     @RequestMapping(value = "/userCenter")
     public ModelAndView userCenter(String username){
         ModelAndView mv = new ModelAndView();
-//        if (username==null){
         mv.addObject("username",username);
         mv.addObject("focus_flag","userInfo");
         mv.setViewName("userCenter");
-//            userFlag = null;
         return mv;
-//        }else {
-//            userFlag = username;
-//            return mv;
-//        }
     }
 
     /**
@@ -166,7 +160,6 @@ public class UserController {
     @RequestMapping("/checkUser")
     @ResponseBody
     public String checkUser(String username){
-
         if(userService.isExist(username)){
             return "1";
         }
@@ -182,21 +175,10 @@ public class UserController {
     @RequestMapping("/historyDeal")
     public ModelAndView historyDeal(String username){
         ModelAndView mv = new ModelAndView();
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-//        if (username==null){
         mv.addObject("username",username);
         mv.addObject("focus_flag","userDeal");
         mv.setViewName("userCenter");
-//            userFlag = null;
-            return mv;
-//        }else {
-//            userFlag = username;
-//            Date date = new Date();
-//            date = userFlag.getBirthday();
-//            String timeFormat = sdf.format(date);
-//            userFlag.setBirthday(date);
-//            return mv;
-//        }
+        return mv;
     }
 
     /**
@@ -224,7 +206,6 @@ public class UserController {
         userMessage.setContent(content);
         userMessage.setTime(new Date());
         userMessage.setType(0);
-        System.out.println(userMessage);
         userService.sendMessageToAdmin(userMessage);
         return "success";
     }
